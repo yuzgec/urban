@@ -11840,7 +11840,7 @@ label {
 }
 
 .header .mainnav ul.main_menu > li:not(:last-child) > a {
-  padding-right: calc(1.5625rem + 3.21429vw);
+  padding-right: calc(.5625rem + .21429vw);
 }
 
 @media (min-width: 1400px) {
