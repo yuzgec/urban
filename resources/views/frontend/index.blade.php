@@ -284,7 +284,6 @@
                         güvenilirliğimizi pekiştirmeye devam ediyoruz.
                     </p>
                 </div>
-               
             </div>
         </div>
 
@@ -292,7 +291,8 @@
             <div class="filters-button-group">
                 <button class="button is-checked" data-filter="*">Hepsi<sup class="filter-count"></sup></button>
                 @foreach($Service->take(5) as $item)
-                <button class="button" data-filter=".{{$item->slug}}">{{$item->title}}<sup class="filter-count"></sup></button>
+                @php $title =$kelimeler = explode(" ", $item->title) @endphp
+                <button class="button" data-filter=".{{$item->slug}}">{{implode(" ", array_slice($title, 0, 2))}}<sup class="filter-count"></sup></button>
                 @endforeach
            
             </div>
@@ -304,9 +304,9 @@
                     <img class="item_image" src="/frontend/img/portfolio/packery/1.jpg" alt="">
                     <div class="works-info">
                         <div class="label-text">
-                            <h6><a href="#">Lake Cabin</a></h6>
+                            <h6>{{ config('settings.siteTitle')}}</h6>
                             <h5><a href="#">California young menz club</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">View Details</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -316,9 +316,9 @@
                     <img class="item_image" src="/frontend/img/portfolio/packery/2.jpg" alt="">
                     <div class="works-info">
                         <div class="label-text">
-                            <h6><a href="#">Lake Cabin</a></h6>
+                            <h6>{{ config('settings.siteTitle')}}</h6>
                             <h5><a href="#">Sunlight in the Room</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">View Details</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -328,9 +328,9 @@
                     <img class="item_image" src="/frontend/img/portfolio/packery/3.jpg" alt="">
                     <div class="works-info">
                         <div class="label-text">
-                            <h6><a href="#">Lake Cabin</a></h6>
+                            <h6>{{ config('settings.siteTitle')}}</h6>
                             <h5><a href="#">Find your own self invintage lake house</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">View Details</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -340,9 +340,9 @@
                     <img class="item_image" src="/frontend/img/portfolio/packery/4.jpg" alt="">
                     <div class="works-info">
                         <div class="label-text">
-                            <h6><a href="#">Lake Cabin</a></h6>
+                            <h6>{{ config('settings.siteTitle')}}</h6>
                             <h5><a href="#">Well decor house in Sydney</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">View Details</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -352,9 +352,9 @@
                     <img class="item_image" src="/frontend/img/portfolio/packery/5.jpg" alt="">
                     <div class="works-info">
                         <div class="label-text">
-                            <h6><a href="#">Lake Cabin</a></h6>
+                            <h6>{{ config('settings.siteTitle')}}</h6>
                             <h5><a href="#">Huge large area Bedroom</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">View Details</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -364,9 +364,9 @@
                     <img class="item_image" src="/frontend/img/portfolio/packery/6.jpg" alt="">
                     <div class="works-info">
                         <div class="label-text">
-                            <h6><a href="#">Lake Cabin</a></h6>
+                            <h6>{{ config('settings.siteTitle')}}</h6>
                             <h5><a href="#">Clean water in the swiming pool</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">View Details</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -376,9 +376,9 @@
                     <img class="item_image" src="/frontend/img/portfolio/packery/7.jpg" alt="">
                     <div class="works-info">
                         <div class="label-text">
-                            <h6><a href="#">Lake Cabin</a></h6>
+                            <h6>{{ config('settings.siteTitle')}}</h6>
                             <h5><a href="#">California young menz club</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">View Details</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -388,9 +388,9 @@
                     <img class="item_image" src="/frontend/img/portfolio/packery/8.jpg" alt="">
                     <div class="works-info">
                         <div class="label-text">
-                            <h6><a href="#">Lake Cabin</a></h6>
+                            <h6>{{ config('settings.siteTitle')}}</h6>
                             <h5><a href="#">Newyork golf club house</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">View Details</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -400,9 +400,9 @@
                     <img class="item_image" src="/frontend/img/portfolio/packery/2.jpg" alt="">
                     <div class="works-info">
                         <div class="label-text">
-                            <h6><a href="#">Lake Cabin</a></h6>
+                            <h6>{{ config('settings.siteTitle')}}</h6>
                             <h5><a href="#">California young menz club</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">View Details</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -412,9 +412,9 @@
                     <img class="item_image" src="/frontend/img/portfolio/packery/3.jpg" alt="">
                     <div class="works-info">
                         <div class="label-text">
-                            <h6><a href="#">Lake Cabin</a></h6>
+                            <h6>{{ config('settings.siteTitle')}}</h6>
                             <h5><a href="#">California young menz club</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">View Details</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -424,9 +424,9 @@
                     <img class="item_image" src="/frontend/img/portfolio/packery/4.jpg" alt="">
                     <div class="works-info">
                         <div class="label-text">
-                            <h6><a href="#">Lake Cabin</a></h6>
+                            <h6>{{ config('settings.siteTitle')}}</h6>
                             <h5><a href="#">California young menz club</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">View Details</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
                 </div>

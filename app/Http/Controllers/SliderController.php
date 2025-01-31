@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SliderRequest;
-use App\Models\Product;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -11,98 +9,82 @@ class SliderController extends Controller
 {
     public function index()
     {
-        $All = Slider::with('getProduct')->orderBy('rank')->get();
-
+        $All = Slider::orderBy('rank')->get();
         return view('backend.slider.index', compact('All'));
     }
 
     public function create()
     {
-        $Pro= Product::pluck('title', 'id');
-        return view('backend.slider.create', compact('Pro'));
+        return view('backend.slider.create');
     }
 
-    public function store(SliderRequest $request)
+    public function store(Request $request)
     {
-        $New = new Slider;
-        $New->title = $request->title;
-        $New->text1 = $request->text1;
-        $New->text2 = $request->text2;
-        $New->text3 = $request->text3;
-        $New->align = $request->align;
-        $New->product_id = $request->product_id;
-        $New->button_text = $request->button_text;
-        $New->button_link = $request->button_link;
+        $request->validate([
+            'tr.title' => 'required',
+            'en.title' => 'required',
+        ]);
 
-        if($request->hasfile('image')){
+        $New = Slider::create($request->all());
+
+        if($request->hasFile('image')){
             $New->addMedia($request->image)->toMediaCollection('web');
         }
 
-        if($request->hasfile('imagemobil')){
+        if($request->hasFile('imagemobil')){
             $New->addMedia($request->imagemobil)->toMediaCollection('mobil');
         }
 
-        $New->save();
-
         toast(SWEETALERT_MESSAGE_CREATE,'success');
         return redirect()->route('slider.index');
-
-    }
-
-    public function show($id)
-    {
-
     }
 
     public function edit($id)
     {
-        $Edit = Slider::findOrFail($id);
-        $Pro= Product::pluck('title', 'id');
-        return view('backend.slider.edit', compact('Edit','Pro'));
+        $Edit = Slider::find($id);
+        return view('backend.slider.edit', compact('Edit'));
     }
 
-    public function update(SliderRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $Update = Slider::findOrFail($id);
-        $Update->title = $request->title;
-        $Update->text1 = $request->text1;
-        $Update->text2 = $request->text2;
-        $Update->text3 = $request->text3;
-        $Update->align = $request->align;
-        $Update->product_id = $request->product_id;
-        $Update->button_text = $request->button_text;
-        $Update->button_link = $request->button_link;
+        $request->validate([
+            'tr.title' => 'required',
+            'en.title' => 'required',
+        ]);
 
-        if ($request->hasFile('image')) {
-            $Update->media()->where('collection_name', 'web')->delete();
+        $Update = Slider::find($id);
+        $Update->update($request->all());
+
+        if($request->removeImage == "1"){
+            $Update->clearMediaCollection('web');
+        }
+
+        if($request->hasFile('image')){
+            $Update->clearMediaCollection('web');
             $Update->addMedia($request->image)->toMediaCollection('web');
         }
 
-        if ($request->hasFile('imagemobil')) {
-            $Update->media()->where('collection_name', 'mobil')->delete();
+        if($request->removeMobilImage == "1"){
+            $Update->clearMediaCollection('mobil');
+        }
+
+        if($request->hasFile('imagemobil')){
+            $Update->clearMediaCollection('mobil');
             $Update->addMedia($request->imagemobil)->toMediaCollection('mobil');
         }
 
-        $Update->save();
 
         toast(SWEETALERT_MESSAGE_UPDATE,'success');
         return redirect()->route('slider.index');
-
     }
 
     public function destroy($id)
     {
-        $Delete = Slider::findOrFail($id);
+        $Delete = Slider::find($id);
         $Delete->delete();
 
         toast(SWEETALERT_MESSAGE_DELETE,'success');
         return redirect()->route('slider.index');
-    }
-
-    public function getOrder(Request $request){
-        foreach($request->get('slider') as  $key => $rank ){
-            Slider::where('id',$rank)->update(['rank'=>$key]);
-        }
     }
 
     public function getSwitch(Request $request){
@@ -111,4 +93,9 @@ class SliderController extends Controller
         $update->save();
     }
 
+    public function getOrder(Request $request){
+        foreach($request->get('slider') as  $key => $rank ){
+            Slider::where('id',$rank)->update(['rank'=>$key]);
+        }
+    }
 }
