@@ -169,6 +169,200 @@
   box-sizing: border-box;
 }
 
+
+
+.services .card-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: white !important;
+}
+
+.services .card-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.services .card-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  opacity: 0; /* Başlangıçta resim tamamen gizli */
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.services .card-text {
+  color: black !important;
+  position: relative;
+  z-index: 2;
+}
+
+.services .card-title a {
+  color: black !important;
+  position: relative;
+  z-index: 2;
+}
+
+.services .card-hover:hover::before {
+  opacity: 1; /* Hover'da overlay görünür */
+}
+
+.services .card-hover:hover::after {
+  opacity: 0.3; /* Hover'da resim yarı saydam görünür */
+}
+
+.services .card-hover:hover .card-text {
+  color: white !important;
+}
+
+.services .card-hover:hover .card-title a {
+  color: white !important;
+}
+
+.services .card-hover .card-body {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.services .card-hover:hover .card-body {
+  transform: translateY(-10px);
+}
+
+.services .card-hover:hover .icon_box img {
+  filter: brightness(1.2);
+  transform: scale(1.1);
+}
+
+
+.black-white-img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+.black-white-img:hover {
+  filter: grayscale(0%);
+}
+
+       
+        .fixed-contact-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 999;
+        }
+
+        .contact-button {   
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            background: #333;
+        }
+
+        .contact-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp {
+            background: #25D366;
+        }
+
+        .instagram {
+            background: #333; /* Siyah beyaz tema için */
+        }
+
+        .phone {
+            background: #333;
+        }
+
+        .contact-button i {
+            font-size: 24px;
+        }
+
+        /* WhatsApp Pulse Efekti */
+        .fixed-contact-buttons .whatsapp {
+            background: #25D366;
+            animation: whatsapp-pulse 2s infinite;
+            position: relative;
+        }
+
+        @keyframes whatsapp-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .fixed-contact-buttons .whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: none; /* Hover durumunda pulse efektini durdur */
+        }
+
+        /* WhatsApp Mesaj Kutusu */
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #333;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(20px);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-left: 8px solid white;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+
+        .whatsapp-tooltip.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;

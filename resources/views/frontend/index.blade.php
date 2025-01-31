@@ -1,88 +1,6 @@
 @extends('frontend.layout.app') 
 @section('content')
-@section('customCSS')
-<style>
 
-
-.services .card-hover {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    background: white !important;
-}
-
-.services .card-hover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    transition: all 0.3s ease;
-    z-index: 1;
-}
-
-.services .card-hover::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: inherit;
-    background-size: cover;
-    background-position: center;
-    opacity: 0; /* Başlangıçta resim tamamen gizli */
-    transition: all 0.3s ease;
-    z-index: 0;
-}
-
-.services .card-text {
-    color: black !important;
-    position: relative;
-    z-index: 2;
-}
-
-.services .card-title a {
-    color: black !important;
-    position: relative;
-    z-index: 2;
-}
-
-.services .card-hover:hover::before {
-    opacity: 1; /* Hover'da overlay görünür */
-}
-
-.services .card-hover:hover::after {
-    opacity: 0.3; /* Hover'da resim yarı saydam görünür */
-}
-
-.services .card-hover:hover .card-text {
-    color: white !important;
-}
-
-.services .card-hover:hover .card-title a {
-    color: white !important;
-}
-
-.services .card-hover .card-body {
-    position: relative;
-    z-index: 2;
-    transition: transform 0.3s ease;
-}
-
-.services .card-hover:hover .card-body {
-    transform: translateY(-10px);
-}
-
-.services .card-hover:hover .icon_box img {
-    filter: brightness(1.2);
-    transform: scale(1.1);
-}
-</style>
-@endsection
 @include('frontend.layout.slider')
 
 <section class="services bg-dark-100 pt-4 pb-0">
@@ -100,8 +18,6 @@
     <div class="large_font">
         <h2 class="floating_element text-dark-200 d-flex justify-content-center" data-aos="fade-right" data-aos-duration="3000">URBAN</h2>
     </div>
-
-
     <div class="container">
         <div class="section-header text-center has_line">
             <h1>URBAN ATM VE KABİN SİSTEMLERİ</h1>
@@ -185,7 +101,7 @@
         <div class="row align-items-center">
             <div class="col-lg-5 col-md-5">
                 <div class="about_image">
-                    <img src="https://demo.bravisthemes.com/mrittik/wp-content/uploads/2023/05/home01-bg-01.jpg" alt="img">
+                    <img src="/frontend/hakkimizda.jpg" alt="{{ config('settings.siteTitle')}}">
                     <img src="/frontend/img/about/e1.svg" alt="About" data-aos="fade-down" data-aos-duration="1000">
                 </div>
             </div>

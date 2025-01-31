@@ -36,3 +36,19 @@
 		list.classList.add('point_order');
 	});
 </script>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const tooltip = document.querySelector('.whatsapp-tooltip');
+		function toggleTooltip() {
+			tooltip.classList.add('show');
+			setTimeout(() => {
+				tooltip.classList.remove('show');
+			}, 3000);
+		}
+		
+		setTimeout(() => {
+			toggleTooltip();
+			setInterval(toggleTooltip, 10000);
+		}, 2000);
+	});
+</script>
