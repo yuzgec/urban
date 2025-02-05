@@ -64,6 +64,16 @@ class HomeController extends Controller
     }
 
 
+    public function service()
+    {
+        $Service = Service::all();
+        SEOMeta::setTitle('Urban Kabin - Hizmetlerimiz');
+        SEOMeta::setCanonical(url()->full());
+        return view('frontend.service.index', compact('Service'));
+    }
+
+
+
     public function project(){
 
         $Project = Service::where('category', 3 )->get();

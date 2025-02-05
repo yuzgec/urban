@@ -400,7 +400,7 @@
             <h2 class="text-white">BLOG YAZILARI</h2>
         </div>
         <div class="row">
-            @foreach ($Blog->random(6) as $item)
+            @foreach ($Blog->random(2) as $item)
             <div class="col-lg-4 col-md-6">
                 <div class="blog_post mb-0">
                     <img src="{{ $item->getFirstMediaUrl('page', 'thumb') }}" alt="{{ $item->title }}">

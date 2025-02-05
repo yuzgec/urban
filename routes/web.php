@@ -15,7 +15,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
     Route::get(__('site.document'), [HomeController::class, 'document'])->name('document');
 
     Route::get(__('site.kurumsal_link').'/{url}', [HomeController::class, 'corporatedetail'])->name('corporatedetail');
+    Route::get('/hizmetlerimiz', [HomeController::class, 'service'])->name('service');
     Route::get(__('site.hizmet_link').'/{url}', [HomeController::class, 'servicedetail'])->name('servicedetail');
+
     Route::get(__('site.kategori_link').'/{url}', [HomeController::class, 'categorydetail'])->name('categorydetail');
     Route::get(__('site.urun_link').'/{url}', [HomeController::class, 'productdetail'])->name('productdetail');
     Route::get(__('site.proje_link').'/{url}', [HomeController::class, 'projectdetail'])->name('projectdetail');

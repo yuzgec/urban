@@ -4,7 +4,7 @@
         <div class="swiper swiper_theme_slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="slider" style="background-image: url(/banner-2.jpg)">
+                    <div class="slider" style="background-image: url(/banner-1.jpg)">
                         <div class="slide_content">
                             <div class="slide_content_wrapper mb-0 h-auto bg-dark-100">
                                 <div class="slide_content_inner">
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="swiper-slide">
-                    <div class="slider" style="background-image: url(/banner-1.jpg)">
+                    <div class="slider" style="background-image: url(/banner-2.jpg)">
                         <div class="slide_content">
                             <div class="slide_content_wrapper mb-0 h-auto bg-dark-100">
                                 <div class="slide_content_inner">
