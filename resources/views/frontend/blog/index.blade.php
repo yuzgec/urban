@@ -49,6 +49,3 @@
     </div>
 </section>
 @endsection
-
-@section('customCSS')
-@endsection
