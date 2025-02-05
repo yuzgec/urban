@@ -30,8 +30,7 @@
         <div class="col-lg-12 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500" style="animation-delay: 500ms;">
             <div class="card">
                 <div class="card-body">
-                    <img src="{{ $Detay->getFirstMediaUrl('page','img')}}" alt="{{ $Detay->title.''.config('settings.siteTitle')}}" class="img-fluid mb-4">
-                    <div class="content">{!! $Detay->desc !!}</div>
+                    <div class="content p-2">{!! $Detay->desc !!}</div>
                 </div>
             </div>
         </div>

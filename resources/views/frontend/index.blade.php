@@ -400,33 +400,34 @@
             <h2 class="text-white">BLOG YAZILARI</h2>
         </div>
         <div class="row">
-            @foreach ($Blog->random(2) as $item)
+            @foreach($Blog as $item)
             <div class="col-lg-4 col-md-6">
-                <div class="blog_post mb-0">
-                    <img src="{{ $item->getFirstMediaUrl('page', 'thumb') }}" alt="{{ $item->title }}">
-
-                    <div class="blog_content">                                    
-                        <h2 class="post-count">01</h2>
-                        <div class="meta">
-                            <time class="text-olive" datetime="2022-10-20">{{ $item->created_at }}</time>
-                        </div>
-                        <h5><a href="{{route('blogdetail', $item->slug)}}" class="text-white">{{ $item->title }}</a></h5>
-                        <p>{{ $item->short }}</p>
-                        <div class="details_link">
-                            <a href="{{route('blogdetail', $item->slug)}}">
-                                <span class="link_text">
-                                    Devamını Oku</span>
-                                <span class="link_icon">
-                                    <span class="line"></span>
-                                    <span class="circle"></span>
-                                    <span class="dot"></span>
-                                </span>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="blog-post">
+                            <a href="{{ route('blogdetail', $item->slug) }}" class="post-image" title="{{ $item->title }}">
+                                <div class="image-overlay"></div>
+                                <span class="post-date">{{ $item->created_at }}</span>
+                                <img src="{{ $item->getFirstMediaUrl('page', 'thumb') }}" alt="{{ $item->title }}">
                             </a>
+                            <h5><a href="{{route('blogdetail', $item->slug)}}" class="text-dark" title="{{ $item->title }}">{{ $item->title }}</a></h5>
+                            <p>{{ $item->short }}</p>
+                            <div class="details_link">
+                                <a href="{{route('blogdetail', $item->slug)}}" title="{{ $item->title }}">
+                                    <span class="link_text">
+                                        Devamını Oku</span>
+                                    <span class="link_icon">
+                                        <span class="line"></span>
+                                        <span class="circle"></span>
+                                        <span class="dot"></span>
+                                    </span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            @endforeach
+        @endforeach
         </div>
     </div>
 </section>
