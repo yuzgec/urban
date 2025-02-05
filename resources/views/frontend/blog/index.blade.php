@@ -17,7 +17,7 @@
 <section class="blog-area">
     <div class="container">
         <div class="row">
-            @foreach($Blog-take(6) as $item)
+            @foreach($Blog as $item)
                 <div class="col-lg-4 col-md-6 mb-3">
                     <div class="card">
                         <div class="card-body">

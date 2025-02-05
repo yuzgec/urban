@@ -400,7 +400,7 @@
             <h2 class="text-white">BLOG YAZILARI</h2>
         </div>
         <div class="row">
-            @foreach($Blog as $item)
+            @foreach($Blog->take(6) as $item)
             <div class="col-lg-4 col-md-6 mb-3">
                 <div class="card">
                     <div class="card-body">
