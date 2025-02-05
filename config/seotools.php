@@ -8,7 +8,7 @@ return [
         'defaults'       => [
             'title'        => "Urban ATM Kabin İmalatı", // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'Urban Kabin İmalatı - Dashboard'
-            'description'  => 'Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatını yapmaktadır. İletişime Geçin.', // set false to total remove
+            'description'  => 'Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatlarını yapmaktadır. Lütfen iletişime geçiniz.', // set false to total remove
             'separator'    => ' - ',
             'keywords'     => ['atm kabin, kabin imalatı, güvenlik kabini, bilet gişesi,kabin üretimi'],
             'url'         =>  false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
@@ -34,7 +34,7 @@ return [
          */
         'defaults' => [
             'title'       => 'Urban ATM Kabin İmalatı', // set false to total remove
-            'description'  => 'Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatını yapmaktadır. İletişime Geçin.', // set false to total remove
+            'description'  => 'Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatlarını yapmaktadır. Lütfen iletişime geçiniz.', // set false to total remove
             'url'         =>  false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type'        => 'website',
             'site_name'   => 'Urban ATM Kabin İmalatı',
@@ -56,7 +56,7 @@ return [
          */
         'defaults' => [
             'title'       => 'Urban ATM Kabin İmalatı', // set false to total remove
-            'description'  => 'Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatını yapmaktadır. İletişime Geçin.', // set false to total remove
+            'description'  => 'Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatlarını yapmaktadır. Lütfen iletişime geçiniz.', // set false to total remove
             'url'         =>  false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type'        => 'WebPage',
             'images'      => [],

@@ -18,7 +18,7 @@ class HomeController extends Controller
     public function index(){
 
         SEOMeta::setTitle('WC Kabin - Otomat İmalatı');
-        SEOMeta::setDescription('Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatını yapmaktadır. İletişime Geçin.');
+        SEOMeta::setDescription('Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatlarını yapmaktadır. Lütfen iletişime geçiniz.');
         SEOMeta::setCanonical(url()->full());
         $Hakkimizda = Page::where('id', '=',1)->first();
         return view('frontend.index', compact('Hakkimizda'));
@@ -123,13 +123,19 @@ class HomeController extends Controller
     public function reference(){
 
         $Reference = Page::where('id', 5 )->first();
+        SEOMeta::setTitle('Referanslarımız');
+        SEOMeta::setCanonical(url()->full());
         return view('frontend.corporate.reference', compact('Reference'));
+
     }
 
     public function blog(){
         $Blog = Blog::all();
+        SEOMeta::setTitle('Blog');
+        SEOMeta::setCanonical(url()->full());
         return view('frontend.blog.index',compact('Blog'));
     }
+
 
     public function video(){
         return view('frontend.gallery.video');
@@ -145,13 +151,20 @@ class HomeController extends Controller
             $query->where('slug', $slug);
         })->first();
 
+        SEOMeta::setTitle($Detay->title);
+        SEOMeta::setCanonical(url()->full());
+
+
         return view('frontend.blog.detail',compact('Detay'));
     }
     
     public function document(){
 
         $Reference = Page::where('id', 6 )->first();
+        SEOMeta::setTitle('Belgelerimiz');
+        SEOMeta::setCanonical(url()->full());
         return view('frontend.corporate.document', compact('Reference'));
+
     }
 
 }
