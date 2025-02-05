@@ -305,7 +305,7 @@
                     <div class="works-info">
                         <div class="label-text">
                             <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">California young menz club</a></h5>
+                            <h5><a href="#">Urban Kabin İmalatı</a></h5>
                             <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
@@ -317,10 +317,11 @@
                     <div class="works-info">
                         <div class="label-text">
                             <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">Sunlight in the Room</a></h5>
+                            <h5><a href="#">Urban Kabin İmalatı</a></h5>
                             <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
+
                 </div>
             </div>                      
             <div class="grid-item residences width-50"> 
@@ -329,8 +330,9 @@
                     <div class="works-info">
                         <div class="label-text">
                             <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">Find your own self invintage lake house</a></h5>
+                            <h5><a href="#">Urban Kabin İmalatı</a></h5>
                             <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+
                         </div>
                     </div>
                 </div>
@@ -341,96 +343,14 @@
                     <div class="works-info">
                         <div class="label-text">
                             <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">Well decor house in Sydney</a></h5>
+                            s<h5><a href="#">Urban Kabin İmalatı</a></h5>
                             <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
+
                 </div>
             </div>                      
-            <div class="grid-item landscape width-50"> 
-                <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/5.jpg" alt="">
-                    <div class="works-info">
-                        <div class="label-text">
-                            <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">Huge large area Bedroom</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>                      
-            <div class="grid-item interiors width-50">
-                <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/6.jpg" alt="">
-                    <div class="works-info">
-                        <div class="label-text">
-                            <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">Clean water in the swiming pool</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>                          
-            <div class="grid-item interiors width-100"> 
-                <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/7.jpg" alt="">
-                    <div class="works-info">
-                        <div class="label-text">
-                            <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">California young menz club</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>                     
-            <div class="grid-item exterior width-100">
-                <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/8.jpg" alt="">
-                    <div class="works-info">
-                        <div class="label-text">
-                            <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">Newyork golf club house</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>                          
-            <div class="grid-item interiors width-50"> 
-                <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/2.jpg" alt="">
-                    <div class="works-info">
-                        <div class="label-text">
-                            <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">California young menz club</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>                      
-            <div class="grid-item residences width-50"> 
-                <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/3.jpg" alt="">
-                    <div class="works-info">
-                        <div class="label-text">
-                            <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">California young menz club</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>                      
-            <div class="grid-item landscape exterior width-100"> 
-                <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/4.jpg" alt="">
-                    <div class="works-info">
-                        <div class="label-text">
-                            <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">California young menz club</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
+           
         </div>
         <div class="btn_group mt-4 w-100 text-center">
             <a href="{{ route('project') }}" class="btn olive w-100">Bütün Projeleri Gör</a>
@@ -483,7 +403,7 @@
             @foreach ($Blog as $item)
             <div class="col-lg-4 col-md-6">
                 <div class="blog_post mb-0">
-                    <img src="/frontend/img/blog/1.jpg" alt="img">
+                    <img src="{{ $item->getFirstMediaUrl('page', 'thumb') }}" alt="{{ $item->title }}">
                     <div class="blog_content">                                    
                         <h2 class="post-count">01</h2>
                         <div class="meta">

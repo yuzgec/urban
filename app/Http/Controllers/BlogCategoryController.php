@@ -23,7 +23,7 @@ class BlogCategoryController extends Controller
 
     public function store(BlogCategoryRequest $request)
     {
-        $create = ServiceCategory::create($request->except('_token', 'image'));
+        $create = BlogCategory::create($request->except('_token', 'image'));
 
         $this->mediaService->handleMediaUpload(
             $create, 

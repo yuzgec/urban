@@ -24,7 +24,7 @@
                         </div>
                         <div class="info_body">
                             <h6>Adres</h6>
-                            <h5  class="text-white">{{ config('settings.adres')}}</h5>
+                            <h5  class="text-white">{{ config('settings.adres1')}}</h5>
                         </div>
                     </div>
                 </div>

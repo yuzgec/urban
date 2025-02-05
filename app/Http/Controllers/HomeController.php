@@ -16,6 +16,9 @@ use Artesaos\SEOTools\Facades\SEOMeta;
 class HomeController extends Controller
 {
     public function index(){
+
+        SEOMeta::setTitle('WC Kabin - Otomat İmalatı');
+        SEOMeta::setDescription('Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatını yapmaktadır. İletişime Geçin.');
         SEOMeta::setCanonical(url()->full());
         $Hakkimizda = Page::where('id', '=',1)->first();
         return view('frontend.index', compact('Hakkimizda'));

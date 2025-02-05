@@ -20,10 +20,11 @@
             @foreach ($Blog as $item)
             <div class="col-lg-4 col-md-6">
                 <div class="blog_post mb-0">
-                    <img src="{{ $item->getFirstMediaUrl('thumb') }}" alt="{{ $item->title }}">
+                    <img src="{{ $item->getFirstMediaUrl('page', 'thumb') }}" alt="{{ $item->title }}">
                     <div class="blog_content">                                    
                         <h2 class="post-count">01</h2>
                         <div class="meta">
+
                             <time class="text-olive" datetime="{{ $item->created_at }}">{{ $item->created_at }}</time>
                         </div>
                         <h5><a href="{{ route('blogdetail', $item->slug) }}" class="text-white">{{ $item->title }}</a></h5>
