@@ -91,44 +91,22 @@
 
                         <div class="related-posts">
                             <h6 class="widget-title mb-2">
-                                ATM KABİNİ PROJELERİMİZ
+                                {{ $Detay->title }} PROJELERİMİZ
                                 <span class="title-line"></span>
                             </h6>
                             <div class="grid grid-3 gutter-15 clearfix"> 
                                 <div class="grid-sizer"></div>                          
                                 <div class="grid-item residences">
                                     <div class="thumb">
-                                        <img class="item_image" src="/frontend/img/portfolio/4.jpg" alt="">
+                                        <img class="item_image" src="/frontend/img/portfolio/4.jpg" alt="{{ $Detay->title }}">
                                         <div class="works-info">
                                             <div class="label-text">
-                                                <h5><a href="#">California young menz club</a></h5>
-                                                <h6><a href="#">Club House</a></h6>
+                                                <h5><a href="#">{{ $Detay->title }}</a></h5>
+                                                <h6><a href="#">Urban Kabin</a></h6>
                                             </div>
                                         </div>
                                     </div>
-                                </div>                          
-                                <div class="grid-item interiors"> 
-                                    <div class="thumb">
-                                        <img class="item_image" src="/frontend/img/portfolio/2.jpg" alt="">
-                                        <div class="works-info">
-                                            <div class="label-text">
-                                                <h5><a href="#">California young menz club</a></h5>
-                                                <h6><a href="#">Club House</a>, <a href="#">Interior</a></h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                      
-                                <div class="grid-item residences"> 
-                                    <div class="thumb">
-                                        <img class="item_image" src="/frontend/img/portfolio/3.jpg" alt="">
-                                        <div class="works-info">
-                                            <div class="label-text">
-                                                <h5><a href="#">California young menz club</a></h5>
-                                                <h6><a href="#">Club House</a>, <a href="#">Interior</a></h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> 
+                                </div>  
                             </div>
                         </div>
                     </div>

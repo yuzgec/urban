@@ -40,7 +40,7 @@
 
     <div class="row">
         <div class="col">
-                {!! $Detay->desc !!}
+            {!! $Detay->desc !!}
         </div>
     </div>
 

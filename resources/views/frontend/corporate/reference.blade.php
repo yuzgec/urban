@@ -7,7 +7,7 @@
             <div class="page_header_content d-flex align-items-center justify-content-between">
                 <div class="d-flex flex-column">
                     <h1 class="heading">
-                        Referanslar
+                        Urban - Referanslar
                     </h1>
                     <div class="">
                         <p class="text-olive">{{config('settings.siteTitle')}}</p>

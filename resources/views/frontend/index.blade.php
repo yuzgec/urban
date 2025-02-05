@@ -102,7 +102,7 @@
             <div class="col-lg-5 col-md-5">
                 <div class="about_image">
                     <img src="/frontend/hakkimizda.jpg" alt="{{ config('settings.siteTitle')}}">
-                    <img src="/frontend/img/about/e1.svg" alt="About" data-aos="fade-down" data-aos-duration="1000">
+                    <img src="/frontend/img/about/e1.svg" alt="{{ config('settings.siteTitle')}}" data-aos="fade-down" data-aos-duration="1000">
                 </div>
             </div>
             <div class="col-lg-6 col-md-7">
@@ -301,7 +301,7 @@
             <div class="grid-sizer"></div>                          
             <div class="grid-item residences width-100">
                 <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/1.jpg" alt="">
+                    <img class="item_image" src="/frontend/img/portfolio/packery/1.jpg" alt="Urban Kabin İmalatı">
                     <div class="works-info">
                         <div class="label-text">
                             <h6>{{ config('settings.siteTitle')}}</h6>
@@ -313,7 +313,7 @@
             </div>                          
             <div class="grid-item interiors width-50"> 
                 <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/2.jpg" alt="">
+                    <img class="item_image" src="/frontend/img/portfolio/packery/2.jpg" alt="Urban Kabin İmalatı">
                     <div class="works-info">
                         <div class="label-text">
                             <h6>{{ config('settings.siteTitle')}}</h6>
@@ -326,11 +326,11 @@
             </div>                      
             <div class="grid-item residences width-50"> 
                 <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/3.jpg" alt="">
+                    <img class="item_image" src="/frontend/img/portfolio/packery/3.jpg" alt="Urban Kabin İmalatı">
                     <div class="works-info">
                         <div class="label-text">
                             <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">Urban Kabin İmalatı</a></h5>
+                            <h5><a href="#">Urban ATM Kabin İmalatı</a></h5>
                             <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
 
                         </div>
@@ -339,11 +339,11 @@
             </div>                      
             <div class="grid-item landscape exterior width-100"> 
                 <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/4.jpg" alt="">
+                    <img class="item_image" src="/frontend/img/portfolio/packery/4.jpg" alt="Urban Kabin İmalatı">
                     <div class="works-info">
                         <div class="label-text">
                             <h6>{{ config('settings.siteTitle')}}</h6>
-                            s<h5><a href="#">Urban Kabin İmalatı</a></h5>
+                            <h5><a href="#">Urban Kabin İmalatı</a></h5>
                             <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
                         </div>
                     </div>
@@ -400,10 +400,11 @@
             <h2 class="text-white">BLOG YAZILARI</h2>
         </div>
         <div class="row">
-            @foreach ($Blog as $item)
+            @foreach ($Blog->random(6) as $item)
             <div class="col-lg-4 col-md-6">
                 <div class="blog_post mb-0">
                     <img src="{{ $item->getFirstMediaUrl('page', 'thumb') }}" alt="{{ $item->title }}">
+
                     <div class="blog_content">                                    
                         <h2 class="post-count">01</h2>
                         <div class="meta">
