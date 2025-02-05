@@ -49,7 +49,7 @@ class Blog extends Model implements HasMedia,TranslatableContract,Viewable
 
         $this->addMediaConversion('watermark')
         ->width(1250)
-        ->watermark(public_path('/gizem-logo.png'))
+        ->watermark(public_path(config('settings.siteLogo')))
         ->watermarkPosition(Manipulations::POSITION_CENTER)
         ->watermarkHeight(70, Manipulations::UNIT_PERCENT)
         ->watermarkWidth(70, Manipulations::UNIT_PERCENT)
