@@ -1,6 +1,6 @@
 User-agent: *
 Disallow:
 
-sitemap: https://www.urbankabin.com.tr/sitemap.xml
+Sitemap: https://www.urbankabin.com.tr/sitemap/tr/sitemap.xml
 
 
