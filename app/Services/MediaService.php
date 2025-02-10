@@ -6,6 +6,8 @@ use Illuminate\Http\UploadedFile;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Support\Collection;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Intervention\Image\Facades\Image;
+use App\Models\Service;
 
 class MediaService
 {
@@ -55,6 +57,19 @@ class MediaService
         $uploadedMedia = collect();
         foreach ($files as $file) {
             $media = $model->addMedia($file)->toMediaCollection($collection);
+            
+            // Gallery collection için orientation kontrolü
+            if ($media && $collection === 'gallery') {
+                $image = Image::make($media->getPath());
+                $width = $image->width();
+                $height = $image->height();
+                
+                $orientation = $width >= $height ? 'horizontal' : 'vertical';
+                
+                $this->updateMediaCustomProperties($media, [
+                    'orientation' => $orientation
+                ]);
+            }
             
             // Orijinal dosyayı sil
             if (!$keepOriginal && $media) {
@@ -183,5 +198,26 @@ class MediaService
     public function hasMedia(HasMedia $model, string $collection): bool
     {
         return $model->hasMedia($collection);
+    }
+
+    public function getAllGalleryMedia(): Collection
+    {
+        $images = Media::query()
+            ->where('collection_name', 'gallery')
+            ->whereHasMorph(
+                'model',
+                [Service::class],
+                function ($query) {
+                    $query->where('status', 1);
+                }
+            )
+            ->with('model.translations')
+            ->orderBy('order_column')
+            ->get();
+
+        // Önce vertical sonra horizontal olacak şekilde sırala
+        return $images->sortBy(function ($media) {
+            return $media->getCustomProperty('orientation') === 'horizontal' ? 1 : 0;
+        });
     }
 } 

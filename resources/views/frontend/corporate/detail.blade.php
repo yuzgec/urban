@@ -44,5 +44,8 @@
     </div>
 </div>
 
-
+@endsection
+@section('customJS')
+<script src="/frontend/plugins/fancybox/jquery.fancybox.min.js"></script>
+<script src="/frontend/plugins/fancybox/fancybox-init.js"></script>
 @endsection

@@ -25,11 +25,10 @@ class ViewShareProvider extends ServiceProvider
        
             Paginator::useBootstrap();
             config()->set('settings', Setting::pluck('value','item')->all());
-
             $Pages = Page::with('getCategory')->where('category', 1)->get();
-            $Blog = Blog::with('getCategory')->get();
+            $Blog = Blog::with('getCategory','media')->get();
             $References = Page::with('media')->where('id', 5)->first();
-            $Service = Service::with('getCategory')->get();
+            $Service = Service::with('getCategory', 'media')->get();
             $ProductCategory = ProductCategory::with('cat')->where('parent_id', null)->get();
             $Product = Product::with(['getCategory'])->where('status', '=', 1)->get();
             $ServiceCategory = ServiceCategory::where('parent_id', null)->get();

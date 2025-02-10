@@ -46,4 +46,6 @@ Route::group(["prefix"=>"go", 'middleware' => ['auth','web', 'admin']],function(
     Route::auto('/reference', ReferenceController::class);
 });
 
+Route::get('/get-service-gallery/{slug?}', [HomeController::class, 'getServiceGallery'])->name('get.service.gallery');
+
 require __DIR__.'/auth.php';

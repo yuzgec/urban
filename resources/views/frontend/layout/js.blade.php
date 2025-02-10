@@ -52,3 +52,54 @@
 		}, 2000);
 	});
 </script>
+<script>
+$(document).ready(function() {
+    var $grid = $('.grid').isotope({
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        layoutMode: 'masonry',
+        masonry: {
+            columnWidth: '.grid-sizer',
+            gutter: 0
+        }
+    });
+
+    // İlk yüklemede tüm resimleri getir ve ID=1 için filtrele
+    loadGallery('atm-kabini');
+
+    // Tab tıklamalarını dinle
+    $('.filters-button-group .button').on('click', function() {
+        let $this = $(this);
+        $('.filters-button-group .button').removeClass('is-checked');
+        $this.addClass('is-checked');
+        loadGallery($this.data('slug'));
+    });
+
+    function loadGallery(slug = '') {
+        $('#gallery-container').addClass('loading');
+        
+        $.get(`/get-service-gallery/${slug}`, function(response) {
+            var $content = $(response.html);
+            
+            $('#gallery-container').empty().append($content);
+            
+            // Count'u güncelle
+            $('.filters-button-group .button[data-slug="'+ slug +'"] .filter-count').text(response.count);
+            
+            $('#gallery-container').imagesLoaded(function() {
+                $grid.isotope('reloadItems');
+                $grid.isotope({
+                    sortBy: 'original-order',
+                    layoutMode: 'masonry'
+                });
+                
+                $('#gallery-container').removeClass('loading');
+            });
+        });
+    }
+});
+</script>
+
+<style>
+
+</style>

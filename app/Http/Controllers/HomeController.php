@@ -9,19 +9,61 @@ use App\Models\Pivot;
 use App\Models\Product;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use App\Services\MediaService;
 use App\Models\ProductCategory;
 use App\Models\ServiceCategory;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class HomeController extends Controller
 {
     public function index(){
-
         SEOMeta::setTitle('WC Kabin - Otomat İmalatı');
         SEOMeta::setDescription('Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatlarını yapmaktadır. Lütfen iletişime geçiniz.');
         SEOMeta::setCanonical(url()->full());
+        
         $Hakkimizda = Page::where('id', '=',1)->first();
-        return view('frontend.index', compact('Hakkimizda'));
+        $Service = Service::where('status', 1)->take(5)->get();
+
+        // Her servis için resim sayılarını hesapla
+        $imageCounts = [];
+        foreach($Service as $service) {
+            $count = Media::query()
+                ->where('collection_name', 'gallery')
+                ->whereHasMorph(
+                    'model',
+                    [Service::class],
+                    function ($query) use ($service) {
+                        $query->whereHas('translations', function($q) use ($service) {
+                            $q->where('slug', $service->translate('tr')->slug);
+                        });
+                    }
+                )->count();
+            
+            $imageCounts[$service->translate('tr')->slug] = $count;
+        }
+
+        $mediaService = new MediaService();
+        
+        // Default olarak ID=1 olan servisin resimlerini getir
+        $defaultService = Service::find(1);
+        $galleryImages = Media::query()
+            ->where('collection_name', 'gallery')
+            ->whereHasMorph(
+                'model',
+                [Service::class],
+                function ($query) {
+                    $query->where('id', 1)->where('status', 1);
+                }
+            )
+            ->with('model.translations')
+            ->orderBy('order_column')
+            ->get()
+            ->sortBy(function ($media) {
+                return $media->getCustomProperty('orientation') === 'horizontal' ? 1 : 0;
+            });
+
+        return view('frontend.index', compact('Hakkimizda', 'galleryImages', 'Service', 'imageCounts', 'defaultService'));
     }
 
     public function categorydetail($url)
@@ -165,6 +207,53 @@ class HomeController extends Controller
         SEOMeta::setCanonical(url()->full());
         return view('frontend.corporate.document', compact('Reference'));
 
+    }
+
+    public function getServiceGallery($slug = null)
+    {
+        // Önce resim sayısını hesapla
+        $count = Media::query()
+            ->where('collection_name', 'gallery')
+            ->whereHasMorph(
+                'model',
+                [Service::class],
+                function ($query) use ($slug) {
+                    $query->where('status', 1);
+                    if ($slug) {
+                        $query->whereHas('translations', function($q) use ($slug) {
+                            $q->where('slug', $slug);
+                        });
+                    }
+                }
+            )->count();
+
+        // Resimleri getir
+        $query = Media::query()
+            ->where('collection_name', 'gallery')
+            ->whereHasMorph(
+                'model',
+                [Service::class],
+                function ($query) use ($slug) {
+                    $query->where('status', 1);
+                    if ($slug) {
+                        $query->whereHas('translations', function($q) use ($slug) {
+                            $q->where('slug', $slug);
+                        });
+                    }
+                }
+            )
+            ->with('model.translations')
+            ->orderBy('order_column');
+
+        $images = $query->get()
+            ->sortBy(function ($media) {
+                return $media->getCustomProperty('orientation') === 'horizontal' ? 1 : 0;
+            });
+
+        return response()->json([
+            'html' => view('frontend.partials.gallery-items', compact('images'))->render(),
+            'count' => $count
+        ]);
     }
 
 }

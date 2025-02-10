@@ -89,26 +89,33 @@
                             </div>
                         </div>
 
-                        <div class="related-posts">
-                            <h6 class="widget-title mb-2">
-                                {{ $Detay->title }} PROJELERİMİZ
-                                <span class="title-line"></span>
-                            </h6>
-                            <div class="grid grid-3 gutter-15 clearfix"> 
-                                <div class="grid-sizer"></div>                          
-                                <div class="grid-item residences">
-                                    <div class="thumb">
-                                        <img class="item_image" src="/frontend/img/portfolio/4.jpg" alt="{{ $Detay->title }}">
-                                        <div class="works-info">
-                                            <div class="label-text">
-                                                <h5><a href="#">{{ $Detay->title }}</a></h5>
-                                                <h6><a href="#">Urban Kabin</a></h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>  
-                            </div>
-                        </div>
+
+                        <h6 class="widget-title mb-2">
+                            {{ $Detay->title }} PROJELERİMİZ
+                            <span class="title-line"></span>
+                        </h6>
+
+                        <figure class="block-gallery">
+                            <ul class="blocks-gallery-grid">
+
+                                <li class="blocks-gallery-item">
+                                    <figure>
+                                        <img src="https://picsum.photos/1920/1000?random=4" alt="img" class="block-image">
+                                        <div class="popup-btn"><a href="https://picsum.photos/1920/1000?random=4" data-fancybox="images"><i class="bi bi-plus"></i></a></div>
+                                    </figure>
+                                </li>
+
+                                <li class="blocks-gallery-item">
+                                    <figure>
+                                        <img src="https://picsum.photos/1000/1920?random=4" alt="img" class="block-image">
+                                        <div class="popup-btn"><a href="https://picsum.photos/1920/1000?random=4" data-fancybox="images"><i class="bi bi-plus"></i></a></div>
+                                    </figure>
+                                </li>
+                     
+                            </ul>
+                        </figure>
+
+
                     </div>
                 </div>
             </div>
@@ -120,8 +127,11 @@
 @endsection
 
 @section('customJS')
+<script src="/frontend/plugins/fancybox/jquery.fancybox.min.js"></script>
+<script src="/frontend/plugins/fancybox/fancybox-init.js"></script>
     <script type="text/javascript">
         const headings = document.querySelectorAll('.content h1, .content h2, .content h3, .content h4, .content h5, .content h6');
+
         headings.forEach(function(heading) {
             heading.classList.add('widget-title');
             const span = document.createElement('span');

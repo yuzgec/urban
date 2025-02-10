@@ -1,10 +1,10 @@
 @extends('frontend.layout.app') 
+
 @section('content')
 
 @include('frontend.layout.slider')
 
 <section class="services bg-dark-100 pt-4 pb-0">
-
     <ul class="grid_lines d-none d-md-flex justify-content-between">
         <li class="grid_line"></li>
         <li class="grid_line"></li>
@@ -278,7 +278,7 @@
             <h2 class="text-white">YAPILAN İŞLER</h2>
             <div class="section-desc row align-items-center justify-content-center">
                 <div class="col-lg-12">
-                    <p> Gerçekleştirdiğimiz referans projelerimiz, kalite ve güvenliği ön planda tutarak 
+                    <p>Gerçekleştirdiğimiz referans projelerimiz, kalite ve güvenliği ön planda tutarak 
                         her müşterimizin ihtiyaçlarına özel çözümler sunduğumuzu göstermektedir.
                         Her projede zamanında ve mükemmeliyetçi bir yaklaşım sergileyerek, sektördeki 
                         güvenilirliğimizi pekiştirmeye devam ediyoruz.
@@ -289,68 +289,22 @@
 
         <div class="portfolio-filters-content">
             <div class="filters-button-group">
-                <button class="button is-checked" data-filter="*">Hepsi<sup class="filter-count"></sup></button>
-                @foreach($Service->take(5) as $item)
-                @php $title =$kelimeler = explode(" ", $item->title) @endphp
-                <button class="button" data-filter=".{{$item->slug}}">{{implode(" ", array_slice($title, 0, 2))}}<sup class="filter-count"></sup></button>
+                <button class="button" data-slug="">Hepsi</button>
+                @foreach($Service as $item)
+                    @php $title = explode(" ", $item->title) @endphp
+                    <button class="button {{ $item->id == 1 ? 'is-checked' : '' }}" data-slug="{{ $item->translate('tr')->slug }}">
+                        {{implode(" ", array_slice($title, 0, 2))}}
+                        <sup class="filter-count">{{ $imageCounts[$item->translate('tr')->slug] ?? 0 }}</sup>
+                    </button>
                 @endforeach
-           
             </div>
         </div>
+
         <div class="grid gutter-20 clearfix"> 
-            <div class="grid-sizer"></div>                          
-            <div class="grid-item residences width-100">
-                <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/1.jpg" alt="Urban Kabin İmalatı">
-                    <div class="works-info">
-                        <div class="label-text">
-                            <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">Urban Kabin İmalatı</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>                          
-            <div class="grid-item interiors width-50"> 
-                <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/2.jpg" alt="Urban Kabin İmalatı">
-                    <div class="works-info">
-                        <div class="label-text">
-                            <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">Urban Kabin İmalatı</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>                      
-            <div class="grid-item residences width-50"> 
-                <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/3.jpg" alt="Urban Kabin İmalatı">
-                    <div class="works-info">
-                        <div class="label-text">
-                            <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">Urban ATM Kabin İmalatı</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>                      
-            <div class="grid-item landscape exterior width-100"> 
-                <div class="thumb">
-                    <img class="item_image" src="/frontend/img/portfolio/packery/4.jpg" alt="Urban Kabin İmalatı">
-                    <div class="works-info">
-                        <div class="label-text">
-                            <h6>{{ config('settings.siteTitle')}}</h6>
-                            <h5><a href="#">Urban Kabin İmalatı</a></h5>
-                            <div class="details_link"><a href="#"><span class="link_text">İncele</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>                      
-           
+            <div class="grid-sizer"></div>
+            <div id="gallery-container">
+                @include('frontend.partials.gallery-items', ['images' => $galleryImages])
+            </div>
         </div>
         <div class="btn_group mt-4 w-100 text-center">
             <a href="{{ route('project') }}" class="btn olive w-100">Bütün Projeleri Gör</a>
@@ -432,6 +386,66 @@
     </div>
 </section>
 
+@endsection
+
+
+@section('customCSS')
+
+
+<style>
+.loading {
+    position: relative;
+    min-height: 200px;
+}
+.loading:after {
+    content: 'Yükleniyor...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.grid-sizer {
+    width: 49%;
+}
+
+.grid-item {
+    margin-bottom: 20px;
+}
+
+.grid-item.width-50 {
+    width: 49%;
+}
+
+.grid-item.width-100 {
+    width: 99%;
+}
+
+/* Sağ-sol yerleşimi için */
+.grid-item.width-50:nth-of-type(2n+1) { /* Tek sayılı elemanlar */
+    margin-right: 1%;
+}
+
+.grid-item.width-50:nth-of-type(2n) { /* Çift sayılı elemanlar */
+    margin-left: 1%;
+}
+
+.thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .grid-sizer,
+    .grid-item.width-50,
+    .grid-item.width-100 {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+</style>
 @endsection
 
 
