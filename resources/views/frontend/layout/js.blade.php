@@ -64,8 +64,14 @@ $(document).ready(function() {
         }
     });
 
-    // İlk yüklemede tüm resimleri getir ve ID=1 için filtrele
-    loadGallery('atm-kabini');
+    // Sayfa ilk yüklendiğinde varsayılan resimleri göster
+    $('#gallery-container').imagesLoaded(function() {
+        $grid.isotope('reloadItems');
+        $grid.isotope({
+            sortBy: 'original-order',
+            layoutMode: 'masonry'
+        });
+    });
 
     // Tab tıklamalarını dinle
     $('.filters-button-group .button').on('click', function() {
