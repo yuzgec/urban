@@ -11367,7 +11367,7 @@ label {
 }
 
 .bg_3 {
-  background: url("../../assets/img/bg/bg-3.jpg");
+  background: url("/frontend/img/bg/bg-3.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -15549,7 +15549,7 @@ body.left_menu .mr_menu {
 .testimonial_inner::before {
   position: absolute;
   content: "";
-  background: url(../../assets/img/bg/bg_t_1.png);
+  background: url("/frontend/img/bg/bg_t_1.png");
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -15560,7 +15560,7 @@ body.left_menu .mr_menu {
 .testimonial_inner::after {
   position: absolute;
   content: "";
-  background: url(../../assets/img/bg/bg_t_2.png);
+  background: url("/frontend/img/bg/bg_t_2.png");    
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -15617,7 +15617,7 @@ body.left_menu .mr_menu {
   top: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/bg/bg-2.jpg");
+  background-image: url("/frontend/img/bg/bg-2.jpg");
   background-position: top center;
   background-repeat: no-repeat;
 }
@@ -15900,7 +15900,7 @@ body.left_menu .mr_menu {
 
 .blog_post .blog_content > a:after {
   position: absolute;
-  content: url("../../assets/img/icon_box/i1.svg");
+  content: url("/frontend/img/icon_box/i1.svg");
   transform: translateX(20px);
   transition: all 0.5s ease;
 }
