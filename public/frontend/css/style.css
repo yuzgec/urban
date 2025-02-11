@@ -12397,7 +12397,7 @@ body.left_menu .mr_menu {
 /*-- Theme Slider --*/
 .theme_slider {
   position: relative;
-  padding: calc(2.3125rem + 10.92857vw) 0 0 0;
+  padding: calc(2.3125rem + 6.92857vw) 0 0 0;
 }
 
 @media (min-width: 1400px) {

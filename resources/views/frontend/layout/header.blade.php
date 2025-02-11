@@ -41,7 +41,7 @@
                 </ul>
             </div>
             <div class="header_right_part d-flex align-items-center">
-                <button class="aside_open">
+                <button class="aside_open d-none d-sm-block">
                     <span class="line"></span>
                     <span class="line"></span>
                     <span class="line"></span>
