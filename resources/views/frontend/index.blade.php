@@ -386,6 +386,32 @@
     </div>
 </section>
 
+
+<div class="container " style="z-index: 1000;">
+    <div class="row">
+        <div class="col-lg-12 content">
+            <div class="card mb-3 mt-3">
+                <div class="card-header">
+                    <h4 class="card-title">URBAN ATM VE KABİN SİSTEMLERİ İMALATI</h4>
+                </div>
+                <div class="card-body">
+                    <p>Urban Kabin, şehir yaşamına uyum sağlayan güvenli, dayanıklı ve estetik kabin sistemleri üretmektedir. İstanbul merkezli üretim tesislerimizde, ATM kabinleri, güvenlik kabinleri, vale kabinleri, otomat kabinleri, konteyner kabinleri, tehlikeli ve tehlikesiz atık kabinleri, WC kabinleri ve bilet satış kabinleri gibi birçok alanda özel çözümler sunuyoruz.
+                    <ul class="point_order">
+                        <li><b>ATM Kabinleri:</b> Bankalar ve finans kurumları için güvenli ve dayanıklı yapılar.</li>
+                        <li><b>Güvenlik Kabinleri:</b> Kamu alanları, siteler ve iş yerleri için güvenlik personeline özel kabin çözümleri.</li>
+                        <li><b>Vale Kabinleri:</b> Restoranlar, oteller ve AVM’ler için ergonomik vale kabinleri.</li>
+                        <li><b>Otomat Kabinleri:</b> Gıda, içecek, bilet ve ödeme otomatları için koruyucu kabinler.</li>
+                        <li><b>Konteyner Kabinleri:</b> Şantiye, ofis ve geçici yaşam alanlarına özel modüler yapılar.</li>
+                        <li><b>Tehlikeli ve Tehlikesiz Atık Kabinleri:</b> Atık yönetimi için çevre dostu ve güvenli kabin çözümleri.</li>
+                        <li><b>WC Kabinleri:</b> Toplu kullanım alanları için hijyenik, dayanıklı ve taşınabilir tuvalet sistemleri.</li>
+                        <li><b>Bilet Satış Kabinleri:</b> Havaalanları, otogarlar ve etkinlik alanları için modern gişe çözümleri.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
 
