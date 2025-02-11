@@ -96,9 +96,9 @@
                                 @foreach($allImages as $item)
                                     <li class="blocks-gallery-item {{ $item->getCustomProperty('orientation') === 'horizontal' ? 'width-100' : '' }}">
                                         <figure>
-                                            <img src="{{ $item->getUrl('watermark') }}" alt="{{ $Detay->title }}" class="block-image">
+                                            <img src="{{ $item->getUrl('thumb') }}" alt="{{ $Detay->title }}" class="block-image">
                                             <div class="popup-btn">
-                                                <a href="{{ $item->getUrl('img') }}" data-fancybox="images">
+                                                <a href="{{ $item->getUrl('watermark') }}" data-fancybox="images">
                                                     <i class="bi bi-plus"></i>
                                                 </a>
                                             </div>
