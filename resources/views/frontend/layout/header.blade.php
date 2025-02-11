@@ -1,10 +1,12 @@
-
 <header class="header">				
     <div class="container">
         <div class="pt-3 d-flex align-items-center justify-content-between">
-            <a href="{{ route('home') }}" class="light_logo">
-                <img src="/{{ config('settings.siteLogo')}}" alt="{{ config('settings.siteTitle')}}" style="width: 200px;">
-            </a>
+            <div class="logo">
+                <a href="{{ route('home') }}" title="{{ config('settings.siteTitle')}}">
+                    <img src="/{{ config('settings.siteFooterLogo')}}" alt="{{ config('settings.siteTitle')}}" class="logo-light">
+                    <img src="/{{ config('settings.siteLogo')}}" alt="{{ config('settings.siteTitle')}}" class="logo-dark">
+                </a>
+            </div>
             <div class="mainnav d-none d-lg-block">
                 <ul class="main_menu">
                     <li class="menu-item  active"><a href="{{ route('home') }}">Anasayfa</a></li>

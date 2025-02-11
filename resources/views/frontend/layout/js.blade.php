@@ -106,6 +106,55 @@ $(document).ready(function() {
 });
 </script>
 
+<script>
+// Tema değiştirme fonksiyonu
+function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+    
+    if (body.classList.contains('bg-white')) {
+        // Light'tan Dark'a geç
+        body.classList.remove('bg-white');
+        body.classList.add('bg-dark');
+        icon.classList.remove('bi-moon-fill');
+        icon.classList.add('bi-sun-fill');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        // Dark'tan Light'a geç
+        body.classList.remove('bg-dark');
+        body.classList.add('bg-white');
+        icon.classList.remove('bi-sun-fill');
+        icon.classList.add('bi-moon-fill');
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Sayfa yüklendiğinde
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+    
+    if (savedTheme === 'light') {
+        body.classList.remove('bg-dark');
+        body.classList.add('bg-white');
+        icon.classList.remove('bi-sun-fill');
+        icon.classList.add('bi-moon-fill');
+    } else {
+        body.classList.remove('bg-white');
+        body.classList.add('bg-dark');
+        icon.classList.remove('bi-moon-fill');
+        icon.classList.add('bi-sun-fill');
+    }
+    
+    // Tema değiştirme butonuna tıklama olayı
+    document.getElementById('theme-toggle').addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleTheme();
+    });
+});
+</script>
+
 <style>
 
 </style>

@@ -106,12 +106,153 @@
     .post-link a:hover .dot {
         transform: translateX(5px);
     }
+
+    :root {
+        --bg-color: #ffffff;
+        --text-color: #000000;
+        --card-bg: #ffffff;
+    }
+
+    [data-theme="dark"] {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+        --card-bg: #2d2d2d;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: all 0.3s ease;
+    }
+
+    .card {
+        background-color: var(--card-bg);
+    }
+
+    .theme-toggle {
+        background: #6c757d;
+    }
+
+    .theme-toggle:hover {
+        background: #5a6268;
+    }
+
+    .fixed-contact-buttons {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 1000;
+    }
+
+    .contact-button {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    /* Dark/Light Tema Stilleri */
+    body.bg-white .card {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    body.bg-white .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    body.bg-white .card-body {
+        color: #212529;
+    }
+
+    body.bg-dark .card {
+        background-color: #2d2d2d;
+        border-color: #404040;
+    }
+
+    body.bg-dark .card-header {
+        background-color: #343434;
+        border-bottom: 1px solid #404040;
+    }
+
+    body.bg-dark .card-body {
+        color: #ffffff;
+    }
+
+    /* Link Renkleri */
+    body.bg-white .card a {
+        color: #212529;
+    }
+
+    body.bg-dark .card a {
+        color: #ffffff;
+    }
+
+    /* Hover Efektleri */
+    body.bg-white .card:hover {
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    body.bg-dark .card:hover {
+        box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    }
+
+    /* Geçiş Efekti */
+    .card, .card-header, .card-body {
+        transition: all 0.3s ease;
+    }
+
+    /* Logo Stilleri */
+    .logo img {
+        max-height: 150px;
+        transition: opacity 0.3s ease;
+    }
+
+    .logo-light, .logo-dark {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    body.bg-dark .logo-light {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    body.bg-dark .logo-dark {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    body.bg-white .logo-light {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    body.bg-white .logo-dark {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .logo {
+        position: relative;
+        display: inline-block;
+        width: 150px; /* Logo genişliğine göre ayarlayın */
+    }
 </style>
 </head>
 
-<body class="bg-white">
+<body class="bg-dark">
 
-    {{-- <div id="preloader">
+    <div id="preloader">
         <div class="preloader-inner">
             <div class="spinner"></div>
             <div class="loading-text">
@@ -122,7 +263,7 @@
                 <span data-preloader-text="N" class="characters">N</span>
             </div>
         </div>
-    </div> --}}
+    </div>
 
     <div id="mode_switcher" class="d-none">
         <span><i class="bi bi-moon-fill"></i></span>	
@@ -140,6 +281,9 @@
         </main>
 
     <div class="fixed-contact-buttons">
+        <a href="#" class="contact-button theme-toggle" id="theme-toggle">
+            <i class="bi bi-sun-fill text-white" id="theme-icon"></i>
+        </a>
         <a href="https://wa.me/{{config('settings.whatsapp')}}" class="contact-button whatsapp" target="_blank">
             <i class="bi bi-whatsapp text-white"></i>
             <div class="whatsapp-tooltip">Hemen mesaj gönderin! 👋</div>
@@ -148,7 +292,7 @@
             <i class="bi bi-instagram text-white"></i>
         </a>
         <a href="tel:{{config('settings.telefon1')}}" class="contact-button phone">
-        <i class="bi bi-phone text-white"></i>
+            <i class="bi bi-phone text-white"></i>
         </a>
     </div>
 
