@@ -250,7 +250,7 @@
 </style>
 </head>
 
-<body class="bg-dark">
+<body class="bg-white">
 
     <div id="preloader">
         <div class="preloader-inner">
