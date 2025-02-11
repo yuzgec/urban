@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="row">
-            @foreach ($Services as $item)
+            @foreach ($Service as $item)
             <div class="col-lg-4 mb-3 content" data-aos="fade-up" data-aos-duration="1000">
                 <div class="card card-hover">
                     <div class="card-body">
@@ -290,7 +290,7 @@
         <div class="portfolio-filters-content">
             <div class="filters-button-group">
                 <button class="button" data-slug="">Hepsi</button>
-                @foreach($Service as $item)
+                @foreach($Services as $item)
                     @php $title = explode(" ", $item->title) @endphp
                     <button class="button {{ $item->id == 1 ? 'is-checked' : '' }}" data-slug="{{ $item->translate('tr')->slug }}">
                         {{implode(" ", array_slice($title, 0, 2))}}

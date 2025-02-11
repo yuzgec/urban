@@ -23,11 +23,11 @@ class HomeController extends Controller
         SEOMeta::setCanonical(url()->full());
         
         $Hakkimizda = Page::where('id', '=',1)->first();
-        $Service = Service::where('status', 1)->take(5)->get();
+        $Services = Service::where('status', 1)->take(5)->orderBy('rank', 'desc')->get();
 
         // Her servis için resim sayılarını hesapla
         $imageCounts = [];
-        foreach($Service as $service) {
+        foreach($Services as $service) {
             $count = Media::query()
                 ->where('collection_name', 'gallery')
                 ->whereHasMorph(
@@ -63,7 +63,7 @@ class HomeController extends Controller
                 return $media->getCustomProperty('orientation') === 'horizontal' ? 1 : 0;
             });
 
-        return view('frontend.index', compact('Hakkimizda', 'galleryImages', 'Service', 'imageCounts', 'defaultService'));
+        return view('frontend.index', compact('Hakkimizda', 'galleryImages', 'Services', 'imageCounts', 'defaultService'));
     }
 
     public function categorydetail($url)
