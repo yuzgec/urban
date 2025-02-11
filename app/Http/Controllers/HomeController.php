@@ -23,7 +23,7 @@ class HomeController extends Controller
         SEOMeta::setCanonical(url()->full());
         
         $Hakkimizda = Page::where('id', '=',1)->first();
-        $Services = Service::where('status', 1)->take(5)->orderBy('rank', 'desc')->get();
+        $Services = Service::where('status', 1)->take(5)->orderBy('rank')->get();
 
         // Her servis için resim sayılarını hesapla
         $imageCounts = [];

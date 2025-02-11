@@ -202,7 +202,7 @@
                 update:function()
                 {
                     let siralama = $('#orders').sortable('serialize');
-                    $.get("{{ route('page.getOrder') }}?"+siralama,() => {
+                    $.get("{{ route('service.getOrder') }}?"+siralama,() => {
                         $("#rank").show(500).delay(2500).fadeOut();
                         document.getElementById("rank").innerHTML="Sıralama başarıyla güncellendi.";
                         setInterval(function(){
@@ -216,7 +216,7 @@
                 const id = $(this)[0].getAttribute('status-id');
                 const status = $(this).prop('checked');
 
-                $.get("{{route('page.getSwitch')}}", {id:id,status:status},
+                $.get("{{route('service.getSwitch')}}", {id:id,status:status},
                 () => {
                     if(status) {}
                 });
