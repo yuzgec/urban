@@ -28,23 +28,19 @@
          <div class="gallery_slider">
             <div class="swiper swiper_gallery">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="gallery-image">
-                            <img src="https://picsum.photos/1920/1000?random=4" alt="img">
+                    @forelse($horizontalImages as $item)
+                        <div class="swiper-slide">
+                            <div class="gallery-image">
+                                <img src="{{ $item->getUrl('img') }}" alt="{{ $Detay->title }}">
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="gallery-image">
-                            <img src="https://picsum.photos/1920/1000?random=5" alt="img">
+                    @empty
+                        <div class="swiper-slide">
+                            <div class="gallery-image">
+                                <img src="{{ $Detay->getFirstMediaUrl('page') }}" alt="{{ $Detay->title }}">
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="gallery-image">
-                            <img src="https://picsum.photos/1920/1000?random=6" alt="img">
-                        </div>
-                    </div>
+                    @endforelse
                 </div>
  
                 <div class="swiper-navigation">
@@ -97,21 +93,18 @@
 
                         <figure class="block-gallery">
                             <ul class="blocks-gallery-grid">
-
-                                <li class="blocks-gallery-item">
-                                    <figure>
-                                        <img src="https://picsum.photos/1920/1000?random=4" alt="img" class="block-image">
-                                        <div class="popup-btn"><a href="https://picsum.photos/1920/1000?random=4" data-fancybox="images"><i class="bi bi-plus"></i></a></div>
-                                    </figure>
-                                </li>
-
-                                <li class="blocks-gallery-item">
-                                    <figure>
-                                        <img src="https://picsum.photos/1000/1920?random=4" alt="img" class="block-image">
-                                        <div class="popup-btn"><a href="https://picsum.photos/1920/1000?random=4" data-fancybox="images"><i class="bi bi-plus"></i></a></div>
-                                    </figure>
-                                </li>
-                     
+                                @foreach($allImages as $item)
+                                    <li class="blocks-gallery-item {{ $item->getCustomProperty('orientation') === 'horizontal' ? 'width-100' : '' }}">
+                                        <figure>
+                                            <img src="{{ $item->getUrl('watermark') }}" alt="{{ $Detay->title }}" class="block-image">
+                                            <div class="popup-btn">
+                                                <a href="{{ $item->getUrl('img') }}" data-fancybox="images">
+                                                    <i class="bi bi-plus"></i>
+                                                </a>
+                                            </div>
+                                        </figure>
+                                    </li>
+                                @endforeach
                             </ul>
                         </figure>
 
@@ -129,14 +122,66 @@
 @section('customJS')
 <script src="/frontend/plugins/fancybox/jquery.fancybox.min.js"></script>
 <script src="/frontend/plugins/fancybox/fancybox-init.js"></script>
-    <script type="text/javascript">
-        const headings = document.querySelectorAll('.content h1, .content h2, .content h3, .content h4, .content h5, .content h6');
-
-        headings.forEach(function(heading) {
-            heading.classList.add('widget-title');
-            const span = document.createElement('span');
-            span.className = 'title-line';  // class adını ekle
-            heading.appendChild(span);  // span'ı başlık etiketinin içine ekle
+<script>
+    $(document).ready(function() {
+        var $grid = $('.blocks-gallery-grid').isotope({
+            itemSelector: '.blocks-gallery-item',
+            percentPosition: true,
+            masonry: {
+                columnWidth: '.blocks-gallery-item'
+            }
         });
-    </script>
+
+        $grid.imagesLoaded().progress(function() {
+            $grid.isotope('layout');
+        });
+    });
+</script>
+@endsection
+
+@section('customCSS')
+<style>
+    /* Slider CSS */
+    .gallery_slider .swiper-slide {
+        height: 500px;
+    }
+    .gallery_slider .gallery-image {
+        width: 100%;
+        height: 100%;
+    }
+    .gallery_slider .gallery-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Gallery Grid CSS */
+    .blocks-gallery-grid {
+        width: 100%;
+    }
+    .blocks-gallery-item {
+        width: 32%;
+        margin-bottom: 20px;
+    }
+    .blocks-gallery-item.width-100 {
+        width: 66%;
+    }
+    .blocks-gallery-item figure {
+        margin: 0;
+        height: 100%;
+    }
+    .blocks-gallery-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    
+    @media (max-width: 768px) {
+        .blocks-gallery-item,
+        .blocks-gallery-item.width-100 {
+            width: 100%;
+        }
+    }
+</style>
 @endsection

@@ -99,10 +99,37 @@ class HomeController extends Controller
             $query->where('slug', $url);
         })->first();
 
+        // Slider için horizontal resimler (max 5)
+        $horizontalImages = Media::query()
+            ->where('collection_name', 'gallery')
+            ->whereHasMorph(
+                'model',
+                [Service::class],
+                function ($query) use ($Detay) {
+                    $query->where('id', $Detay->id);
+                }
+            )
+            ->whereJsonContains('custom_properties->orientation', 'horizontal')
+            ->take(5)
+            ->get();
+
+        // Tüm resimler
+        $allImages = Media::query()
+            ->where('collection_name', 'gallery')
+            ->whereHasMorph(
+                'model',
+                [Service::class],
+                function ($query) use ($Detay) {
+                    $query->where('id', $Detay->id);
+                }
+            )
+            ->get();
+
         views($Detay)->cooldown(60)->record();
         SEOMeta::setTitle($Detay->title);
         SEOMeta::setCanonical(url()->full());
-        return view('frontend.service.detail', compact('Detay'));
+        
+        return view('frontend.service.detail', compact('Detay', 'horizontalImages', 'allImages'));
     }
 
 
