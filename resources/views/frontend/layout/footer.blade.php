@@ -46,7 +46,7 @@
                             <div class="terms_condition">
                                 <ul>
                                     <li><a href="{{ route('contactus')}}">İletişim</a></li>
-                                    <li><a href="{{route('home')}}/sitemap.xml">Sitemap</a></li>
+                                    <li><a href="{{route('home')}}/sitemap/{{config('app.locale')}}/sitemap.xml">Sitemap</a></li>
                                     <li><a href="https://www.godijital.net" target="_blank">Web Tasarım</a></li>
                                 </ul>
                             </div>

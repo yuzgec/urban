@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="row">
-            @foreach ($Service as $item)
+            @foreach ($Services as $item)
             <div class="col-lg-4 mb-3 content" data-aos="fade-up" data-aos-duration="1000">
                 <div class="card card-hover">
                     <div class="card-body">
