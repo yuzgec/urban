@@ -8,21 +8,18 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
-    Route::get(__('site.iletisim_link'), [HomeController::class, 'contactus'])->name('contactus');
-    Route::get(__('site.referans_link'), [HomeController::class, 'reference'])->name('reference');
-    Route::get(__('site.galeri_link'), [HomeController::class, 'gallery'])->name('gallery');
-    Route::get(__('site.blog_link'), [HomeController::class, 'blog'])->name('blog');
-    Route::get(__('site.document'), [HomeController::class, 'document'])->name('document');
+    Route::get(__('menu.iletisim'), [HomeController::class, 'contactus'])->name('contactus');
+    Route::get(__('menu.referans'), [HomeController::class, 'reference'])->name('reference');
+    Route::get(__('menu.galeri'), [HomeController::class, 'gallery'])->name('gallery');
+    Route::get(__('menu.blog'), [HomeController::class, 'blog'])->name('blog');
 
-    Route::get(__('site.kurumsal_link').'/{url}', [HomeController::class, 'corporatedetail'])->name('corporatedetail');
-    Route::get('/hizmetlerimiz', [HomeController::class, 'service'])->name('service');
-    Route::get(__('site.hizmet_link').'/{url}', [HomeController::class, 'servicedetail'])->name('servicedetail');
+    Route::get(__('menu.kurumsal').'/{url}', [HomeController::class, 'corporatedetail'])->name('corporatedetail');
+    Route::get(__('menu.hizmetlerimiz'), [HomeController::class, 'service'])->name('service');
+    Route::get(__('menu.hizmet').'/{url}', [HomeController::class, 'servicedetail'])->name('servicedetail');
 
-    Route::get(__('site.kategori_link').'/{url}', [HomeController::class, 'categorydetail'])->name('categorydetail');
-    Route::get(__('site.urun_link').'/{url}', [HomeController::class, 'productdetail'])->name('productdetail');
-    Route::get(__('site.proje_link').'/{url}', [HomeController::class, 'projectdetail'])->name('projectdetail');
-    Route::get(__('site.projeler_link'), [HomeController::class, 'project'])->name('project');
-    Route::get('blog/{url}', [HomeController::class, 'blogdetail'])->name('blogdetail');
+    Route::get(__('menu.proje').'/{url}', [HomeController::class, 'projectdetail'])->name('projectdetail');
+    Route::get(__('menu.projeler'), [HomeController::class, 'project'])->name('project');
+    Route::get(__('menu.blog').'/{url}', [HomeController::class, 'blogdetail'])->name('blogdetail');
 
     Route::get('video', [HomeController::class, 'video'])->name('video');
     Route::get('foto', [HomeController::class, 'foto'])->name('foto');

@@ -10,7 +10,7 @@
             <div class="mainnav d-none d-lg-block">
                 <ul class="main_menu">
                     <li class="menu-item  active"><a href="{{ route('home') }}">{{ __('site.anasayfa') }}</a></li>
-                    <li class="menu-item menu-item-has-children"><a href="#">Kurumsal</a>
+                    <li class="menu-item menu-item-has-children"><a href="#">{{ __('site.kurumsal') }}</a>
                         <ul class="sub-menu">
                             @foreach ($Pages as $item)
                                 <li class="menu-item">
@@ -22,7 +22,7 @@
                  
                         </ul>
                     </li>
-                    <li class="menu-item menu-item-has-children"><a href="#">Hizmetlerimiz</a>
+                    <li class="menu-item menu-item-has-children"><a href="#">{{ __('site.hizmetlerimiz') }}</a>
                         <ul class="sub-menu">
                             @foreach ($Service as $item)
                                 <li class="menu-item">
@@ -33,11 +33,11 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li class="menu-item"><a href="{{ route('project')}}">Projeler</a></li>
-                    <li class="menu-item"><a href="{{ route('reference')}}">Referanslar</a></li>
+                    <li class="menu-item"><a href="{{ route('project')}}">{{ __('site.projeler') }}</a></li>
+                    <li class="menu-item"><a href="{{ route('reference')}}">{{ __('site.referanslar') }}</a></li>
                     {{-- <li class="menu-item"><a href="{{ route('blog')}}">S.S.S.</a></li> --}}
-                    <li class="menu-item"><a href="{{ route('blog')}}">Blog</a></li>
-                    <li class="menu-item"><a href="{{ route('contactus')}}">İletişim</a></li>
+                    <li class="menu-item"><a href="{{ route('blog')}}">{{ __('site.blog') }}</a></li>
+                    <li class="menu-item"><a href="{{ route('contactus')}}">{{ __('site.iletisim') }}</a></li>
                 </ul>
             </div>
             <div class="header_right_part d-flex align-items-center">
