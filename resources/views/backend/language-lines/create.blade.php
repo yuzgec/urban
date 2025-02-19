@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('backend.layout.app')
 @section('title', 'Yeni Çeviri Ekle')
 @section('content')
     <div class="col-12 col-md-8">

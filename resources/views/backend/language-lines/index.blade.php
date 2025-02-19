@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('backend.layout.app')
 @section('title', 'Çeviriler')
 @section('content')
     <div class="col-12">
