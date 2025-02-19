@@ -44,6 +44,7 @@ Route::group(["prefix"=>"go", 'middleware' => ['auth','web', 'admin']],function(
     Route::auto('/slider', SliderController::class);
     Route::auto('/settings', SettingController::class);
     Route::auto('/reference', ReferenceController::class);
+    Route::resource('language-lines', LanguageLineController::class);
 });
 
 Route::get('/get-service-gallery/{slug?}', [HomeController::class, 'getServiceGallery'])->name('get.service.gallery');
