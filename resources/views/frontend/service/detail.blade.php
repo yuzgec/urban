@@ -31,7 +31,7 @@
                     @forelse($horizontalImages as $item)
                         <div class="swiper-slide">
                             <div class="gallery-image">
-                                <img src="{{ $item->getUrl('img') }}" alt="{{ $Detay->title }}">
+                                <img src="{{ $item->getUrl('watermark') }}" alt="{{ $Detay->title }}">
                             </div>
                         </div>
                     @empty
