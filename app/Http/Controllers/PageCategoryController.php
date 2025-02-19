@@ -65,9 +65,9 @@ class PageCategoryController extends Controller
         $Update->short = $request->short;
         $Update->desc = $request->desc;
 
-        $Update->seo_title = $request->seo_title;
-        $Update->seo_desc = $request->seo_desc;
-        $Update->seo_key = $request->seo_key;
+        $Update->seo1 = $request->seo1;
+        $Update->seo2 = $request->seo2;
+        $Update->seo3 = $request->seo3;
 
         $Update->parent_id  = $request->parent_id;
 
@@ -91,10 +91,6 @@ class PageCategoryController extends Controller
     public function destroy($id)
     {
         $Delete = PageCategory::find($id);
-        if($Delete->getCategoryCount() > 0){
-            alert()->error('Silinemez','Kategoriye ait sayfa bulunmaktadır.');
-            return Redirect::back();
-        }
         $Delete->delete();
 
         toast(SWEETALERT_MESSAGE_DELETE,'success');
