@@ -347,7 +347,7 @@
     </div>
     <div class="container">
         <div class="section-header text-center has_line">
-            <h2 class="text-white">BLOG YAZILARI</h2>
+            <h2 class="text-white">{{ __('site.blog_yazilari') }}</h2>
         </div>
         <div class="row">
             @foreach($Blog->take(6) as $item)
@@ -365,7 +365,8 @@
                             <div class="details_link">
                                 <a href="{{route('blogdetail', $item->slug)}}" title="{{ $item->title }}">
                                     <span class="link_text">
-                                        Devamını Oku</span>
+                                        {{ __('site.devaminioku') }}
+                                    </span>
                                     <span class="link_icon">
                                         <span class="line"></span>
                                         <span class="circle"></span>
@@ -420,7 +421,7 @@
     min-height: 200px;
 }
 .loading:after {
-    content: 'Yükleniyor...';
+    content: '{{ __('site.yukleniyor') }}';
     position: absolute;
     top: 50%;
     left: 50%;

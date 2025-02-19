@@ -14,7 +14,7 @@
                                     <h4><a href="{{route('home')}}/hizmet/atm-kabini-imalati" class="text-white">ATM KABİN İMALATI</a></h4>
                                     <div class="details_link">
                                         <a href="{{route('home')}}/hizmet/atm-kabini-imalati">
-                                            <span class="link_text">İncele</span> 
+                                            <span class="link_text">{{__('site.incele')}}</span> 
                                             <span class="link_icon">
                                                 <span class="line"></span> 
                                                 <span class="circle"></span>
@@ -39,7 +39,7 @@
                                     <h4><a href="{{route('home')}}/hizmet/atm-kabini-imalati" class="text-white">BİLET GİŞESİ İMALATI</a></h4>
                                     <div class="details_link">
                                         <a href="{{route('home')}}/hizmet/atm-kabini-imalati">
-                                            <span class="link_text">İncele</span> 
+                                            <span class="link_text">{{__('site.incele')}}</span> 
                                             <span class="link_icon">
                                                 <span class="line"></span> 
                                                 <span class="circle"></span>
@@ -65,7 +65,7 @@
                                     <h4><a href="{{route('home')}}/hizmet/atm-kabini-imalati" class="text-white">GÜVENLİK KABİNİ İMALATI</a></h4>
                                     <div class="details_link">
                                         <a href="{{route('home')}}/hizmet/atm-kabini-imalati">
-                                            <span class="link_text">İncele</span> 
+                                            <span class="link_text">{{__('site.incele')}}</span> 
                                             <span class="link_icon">
                                                 <span class="line"></span> 
                                                 <span class="circle"></span>

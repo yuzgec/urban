@@ -1,4 +1,4 @@
-<div class="totop"><a href="#">Yukarı</a></div>
+<div class="totop"><a href="#">{{ __('site.yukari') }}</a></div>
 <ul class="grid_lines d-none d-md-flex justify-content-between">
 	<li class="grid_line"></li>
 	<li class="grid_line"></li>

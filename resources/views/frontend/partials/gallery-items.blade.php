@@ -48,7 +48,7 @@
                                 <h5><a href="{{ route('servicedetail', $item->model->slug) }}">{{ $item->model->title }}</a></h5>
                                 <div class="details_link">
                                     <a href="{{ route('servicedetail', $item->model->slug) }}">
-                                        <span class="link_text">İncele</span>
+                                        <span class="link_text">{{ __('site.incele') }}</span>
                                         <span class="link_icon">
                                             <span class="line"></span>
                                             <span class="circle"></span>
@@ -75,7 +75,7 @@
                     <h5><a href="{{ route('servicedetail', $item->model->slug) }}">{{ $item->model->title }}</a></h5>
                     <div class="details_link">
                         <a href="{{ route('servicedetail', $item->model->slug) }}">
-                            <span class="link_text">İncele</span>
+                            <span class="link_text">{{ __('site.incele') }}</span>
                             <span class="link_icon">
                                 <span class="line"></span>
                                 <span class="circle"></span>

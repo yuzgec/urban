@@ -3,6 +3,7 @@
 return [
     'firma' => 'URBAN ATM VE KABİN SİSTEMLERİ',
     'hizmet_slogan' => 'Şehir yaşamını güvenli, fonksiyonel ve estetik çözümlerle şekillendiriyoruz.',
+    'sidebar_text' => 'Urban kabin sistemleri, modern şehir yaşamına uygun, pratik ve fonksiyonel yaşam alanları sunan, sürdürülebilir ve yenilikçi yapılar olarak dikkat çeker. ',
 
     'neden_urban_kabin' => 'Neden Urban Kabin?',
     'neden_1_title' => 'Kalite ve Dayanıklılık',
@@ -30,17 +31,27 @@ return [
     'blog_yazilari' => 'Blog Yazıları',
 
 
-
     'iletisim_baslik' => 'İletişim',
     'iletisim_alt_text' => 'İletişim bilgilerinizi ve projeleriniz için iletişim kurun.',
 
+    'iletisim_page_text_1' => 'Urban Kabin, şehir yaşamına özel güvenli, fonksiyonel ve estetik kabin çözümleri sunmaktadır. Her ihtiyacınıza özel çözümler üretmek için sizinle çalışmaya hazırız.',
+    'iletisim_page_text_2' => 'Mesajınıza en kısa zamanda dönüş yapılacaktır.',
+
     'devaminioku' => "Devamını Oku",
+    'incele' => 'İncele',
+    'yukari' => 'Yukarı',
+    'yukleniyor' => 'Yükleniyor...',
+
+    'adsoyad' => 'Adınız Soyadınız',
+    'mesaj' => 'Mesajınız',
+    'gonder' => 'Gönder',
 
     'telefon' => 'Telefon',
     'email' => 'Email',
     'adres' => 'Adres',
     'anasayfa' => 'Anasayfa',
     'kurumsal' => 'Kurumsal',
+    'blog_yazilari' => 'Blog Yazıları',
     'hizmetlerimiz' => 'Hizmetlerimiz',
     'iletisim' => 'İletişim',
     'galeri' => 'Galeri',

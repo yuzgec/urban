@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <ul class="breadcrumb d-flex align-items-center">
-                    <li><a href="{{ route('home')}}">Anasayfa</a></li>
+                    <li><a href="{{ route('home')}}">{{ __('site.anasayfa')}}</a></li>
                     <li><a href="" title="{{ $Detay->getCategory->title}}">{{ $Detay->getCategory->title}}</a></li>
                     <li class="active">{{ $Detay->title}}</li>
                 </ul>

@@ -46,10 +46,14 @@
                     <span class="line"></span>
                     <span class="line"></span>
                 </button>
-                <div class="header_search">								
-                    <img src="/frontend/flag/tr.svg" alt="Türkçe" style="width: 15px;">
-                    <img src="/frontend/flag/en.svg" alt="English" style="width: 15px;">
-                    <img src="/frontend/flag/sa.svg" alt="Arabic" style="width: 20px;">
+                <div class="header_search">			
+                    
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <a class="" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, '/', [], true) }}">
+                            <img src="/frontend/flag/{{ $localeCode }}.svg" alt="{{ $properties['native'] }}" style="width: 20px;">
+                        </a>
+                    @endforeach
+                
                 </div>
                 
                 <button type="button" class="mr_menu_toggle d-lg-none">
@@ -89,7 +93,7 @@
                         </ul>
                     </div>
                     <div class="copyright">
-                        <p>{{ config('settings.siteTitle')}} {{ date('Y')}}.<br> Tüm Hakları Saklıdır.</p>
+                        <p>{{ config('settings.siteTitle')}} {{ date('Y')}}.<br> {{ __('site.tüm_hakları_saklıdır') }}</p>
                     </div>
                 </div>
             </div>
@@ -104,13 +108,15 @@
 
     </div>
     <div class="aside_info_inner">
-        <p>Urban kabin sistemleri, modern şehir yaşamına uygun, pratik ve fonksiyonel yaşam alanları sunan, sürdürülebilir ve yenilikçi yapılar olarak dikkat çeker.        </p>
+        <p>{{ __('site.sidebar_text') }}</p>
         
         <div class="aside_info_inner_box">
-            <h5>İletişim Bilgileri</h5>
+            <h5>{{ __('site.iletisim') }}</h5>
             <p>{{ config('settings.telefon1')}}</p>
+            <p>{{ config('settings.telefon2')}}</p>
             <p>{{ config('settings.email1')}}</p>
             <p>{{ config('settings.adres1')}}</p>
+            <p>{{ config('settings.adres2')}}</p>
         </div>
         <div class="social_sites">
             <ul class="d-flex align-items-center justify-content-center">

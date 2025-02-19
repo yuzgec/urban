@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ config('app.locale') }}" dir="{{ config('app.locale') == 'sa' ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -286,7 +286,6 @@
         </a>
         <a href="https://wa.me/{{config('settings.whatsapp')}}" class="contact-button whatsapp" target="_blank">
             <i class="bi bi-whatsapp text-white"></i>
-            <div class="whatsapp-tooltip">Hemen mesaj gönderin! 👋</div>
         </a>
         <a href="https://www.instagram.com/{{config('settings.instagram')}}" class="contact-button instagram" target="_blank">
             <i class="bi bi-instagram text-white"></i>

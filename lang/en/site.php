@@ -3,6 +3,7 @@
 return [
     'firma' => 'URBAN ATM AND CABIN SYSTEMS',
     'hizmet_slogan' => 'We shape urban life with safe, functional, and aesthetic solutions.',
+    'sidebar_text' => 'Urban cabin systems stand out as sustainable and innovative structures offering practical and functional living spaces suitable for modern urban life.',
 
     'neden_urban_kabin' => 'Why Urban Cabin?',
     'neden_1_title' => 'Quality and Durability',
@@ -31,15 +32,27 @@ return [
 
     'iletisim_baslik' => 'Contact',
     'iletisim_alt_text' => 'Contact information and connect for your projects.',
+    'iletisim_page_text_1' => 'Urban Cabin offers safe, functional, and aesthetic cabin solutions tailored to urban life. We are ready to work with you to provide customized solutions for all your needs.',
+    'iletisim_page_text_2' => 'Your message will be responded to as soon as possible.',
+
 
     'devaminioku' => 'Read More',
-
+    'incele' => 'Read More',
+    'yukari' => 'Top',
+    'yukleniyor' => 'Loading...',
     'telefon' => 'Phone',
+
+
+    'adsoyad' => 'Your Name',
+    'mesaj' => 'Your Message',
+    'gonder' => 'Send Message',
+
     'email' => 'Email',
     'adres' => 'Address',
     'anasayfa' => 'Home',
     'kurumsal' => 'Corporate',
     'hizmetlerimiz' => 'Services',
+    'blog_yazilari' => 'Blog Posts',
     'iletisim' => 'Contact',
     'galeri' => 'Gallery',
     'referanslar' => 'References',
