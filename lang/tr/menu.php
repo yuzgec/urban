@@ -6,4 +6,5 @@ return [
     'kurumsal' => 'kurumsal',
     'hizmet' => 'hizmet',
     'proje' => 'proje',
+    'referanslar' => 'referanslar',
 ];

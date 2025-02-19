@@ -16,13 +16,13 @@
                         </div>
                         <div class="info_body">
                             <h6>{{ __('site.telefon') }}</h6>
-                            <h5><a href="tel:{{ config('settings.telefon1')}}" class="text-white">{{ config('settings.telefon1')}}</a> </h5>
-                            <h5><a href="tel:{{ config('settings.telefon2')}}" class="text-white">{{ config('settings.telefon2')}}</a> </h5>
+                            <h5><a href="tel:{{ config('settings.telefon1')}}" class="text-white" dir="ltr">{{ config('settings.telefon1')}}</a> </h5>
+                            <h5><a href="tel:{{ config('settings.telefon2')}}" class="text-white" dir="ltr">{{ config('settings.telefon2')}}</a> </h5>
 
                         </div>
                         <div class="info_body">
                             <h6>{{ __('site.depo_imalat') }}</h6>
-                            <h5 class="text-white">{{ config('settings.adres1')}}</h5>
+                            <h5 class="text-white ">{{ config('settings.adres1')}}</h5>
 
                         </div>
                         <div class="info_body">
@@ -39,7 +39,7 @@
                                     <img src="/{{ config('settings.siteFooterLogo')}}" alt="{{config('settings.siteTitle')}}">
                                 </a>
                             </div>
-                            <div class="footer_social">
+                            <div class="footer_social" dir="ltr">
                                 <ul class="social_list">
                                     <li class="facebook"><a href="https://www.facebook.com/{{ config('settings.facebook')}}" target="_blank"><i class="bi bi-facebook"></i></a></li>
                                     <li class="instagram"><a href="https://www.instagram.com/{{ config('settings.instagram')}}" target="_blank" ><i class="bi bi-instagram"></i></a></li>

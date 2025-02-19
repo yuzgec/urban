@@ -7,6 +7,7 @@
 @import url("../plugins/cursor-effect/cursor-effect.css");
 @import url("../plugins/aos/aos.css");
 @import url("../plugins/fancybox/jquery.fancybox.css");
+
 .bg-dark-100 {
   background: #1b1b1b;
 }
@@ -14114,6 +14115,7 @@ body.left_menu .mr_menu {
   border-radius: 100%;
   flex-shrink: 0;
   margin-right: 1.25rem;
+  margin-left: 1.25rem;
 }
 
 .funfacts_inner .funfact2 .funfact_content h2, .funfacts_inner .funfact2 .funfact_content .h2 {

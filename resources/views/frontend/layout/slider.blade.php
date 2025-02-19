@@ -1,5 +1,5 @@
 
-<div class="theme_slider bg-black">
+<div class="theme_slider bg-black" dir="ltr">
     <div class="container">
         <div class="swiper swiper_theme_slider">
             <div class="swiper-wrapper">

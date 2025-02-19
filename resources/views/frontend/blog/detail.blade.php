@@ -1,7 +1,7 @@
 @extends('frontend.layout.app')
 @section('content')
 
-<div class="page_header">
+<div class="page_header" dir="ltr">
     <div class="page_header_inner">
         <div class="container">
             <div class="page_header_content d-flex align-items-center justify-content-between">

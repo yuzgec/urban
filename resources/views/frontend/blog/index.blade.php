@@ -1,10 +1,17 @@
 @extends('frontend.layout.app')
 @section('content')
-<div class="page_header">
+<div class="page_header" dir="ltr">
     <div class="page_header_inner">
         <div class="container">
             <div class="page_header_content d-flex align-items-center justify-content-between">
-                <h2 class="heading">{{ __('site.blog')}}</h2>
+                <div class="d-flex flex-column">
+                    <h1 class="heading">
+                        {{ __('site.blog')}}
+                    </h1>
+                    <div class="">
+                        <p class="text-olive">{{config('settings.siteTitle')}}</p>
+                    </div>
+                </div>
                 <ul class="breadcrumb d-flex align-items-center">
                     <li><a href="{{ route('home')}}">{{ __('site.anasayfa')}}</a></li>
                     <li class="active">{{ __('site.blog')}}</li>

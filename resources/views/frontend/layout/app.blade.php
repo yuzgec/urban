@@ -252,7 +252,7 @@
 
 <body class="bg-white">
 
-    <div id="preloader">
+    <div id="preloader" dir="ltr">
         <div class="preloader-inner">
             <div class="spinner"></div>
             <div class="loading-text">

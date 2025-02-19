@@ -11,7 +11,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
     //dd(__('menu.iletisim'));
 
     Route::get(__('menu.iletisim'), [HomeController::class, 'contactus'])->name('contactus');
-    Route::get(__('menu.referans'), [HomeController::class, 'reference'])->name('reference');
+    Route::get(__('menu.referanslar'), [HomeController::class, 'reference'])->name('reference');
     Route::get(__('menu.galeri'), [HomeController::class, 'gallery'])->name('gallery');
     Route::get(__('menu.blog'), [HomeController::class, 'blog'])->name('blog');
 

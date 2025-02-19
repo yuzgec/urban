@@ -1,4 +1,4 @@
-<header class="header">				
+<header class="header" dir="ltr">				
     <div class="container">
         <div class="pt-3 d-flex align-items-center justify-content-between">
             <div class="logo">
