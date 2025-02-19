@@ -20,10 +20,10 @@
     </div>
     <div class="container">
         <div class="section-header text-center has_line">
-            <h1>URBAN ATM VE KABİN SİSTEMLERİ</h1>
+            <h1>{{ __('site.firma') }}</h1>
             <div class="section-desc row align-items-center justify-content-center">
                 <div class="col-lg-12">
-                    <p>Şehir yaşamını güvenli, fonksiyonel ve estetik çözümlerle şekillendiriyoruz.</p>
+                    <p>{{ __('site.hizmet_slogan') }}</p>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                         </p>
                         <div class="details_link">
                             <a href="{{ route('servicedetail', $item->slug) }}" title="{{ $item->title }}">
-                                <span class="link_text">Devamını Oku</span>
+                                <span class="link_text">{{ __('site.devaminioku') }}</span>
                                 <span class="link_icon">
                                     <span class="line"></span>
                                     <span class="circle"></span>
@@ -61,10 +61,10 @@
 <div>
     <div class="container" style="z-index: 1000;margin-top:100px">
         <div class=" text-center has_line">
-            <h1>REFERANSLAR</h1>
+            <h1>{{ __('site.referanslar') }}</h1>
             <div class="section-desc row align-items-center justify-content-center">
                 <div class="col-lg-12">
-                    <p>Şehir yaşamını güvenli, fonksiyonel ve estetik çözümlerle şekillendiriyoruz.</p>
+                    <p>{{ __('site.referans_alt_text') }}</p>
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
         <div class="col-md-2 col-4 mb-4 text-center">
             <div class="card">
                 <div class="card-body">
-                    <img src="{{ $item->getUrl('thumb') }}" alt="Urban ATM Kabin İmalatı" class="img-fluid black-white-img">
+                    <img src="{{ $item->getUrl('thumb') }}" alt="{{ __('site.firma')}}" class="img-fluid black-white-img">
                 </div>
             </div>
         </div>
@@ -101,48 +101,48 @@
         <div class="row align-items-center">
             <div class="col-lg-5 col-md-5">
                 <div class="about_image">
-                    <img src="/frontend/hakkimizda.jpg" alt="{{ config('settings.siteTitle')}}">
-                    <img src="/frontend/img/about/e1.svg" alt="{{ config('settings.siteTitle')}}" data-aos="fade-down" data-aos-duration="1000">
+                    <img src="/frontend/hakkimizda.jpg" alt="{{ __('site.firma')}}">
+                    <img src="/frontend/img/about/e1.svg" alt="{{ __('site.firma')}}" data-aos="fade-down" data-aos-duration="1000">
                 </div>
             </div>
             <div class="col-lg-6 col-md-7">
                 <div class="about_text_inner">
                     <div class="about_text">
-                        <h2 class="text-white">URBAN ATM VE KABİN SİSTEMLERİ</h2>
+                        <h2 class="text-white">{{ __('site.firma') }}</h2>
                         {!! $Hakkimizda->short !!}
                     </div>
 
                     <div class="about_icon_box">
-                        <h3 class="text-dark mb-2">NEDEN URBAN KABİN</h3>
+                        <h3 class="text-dark mb-2">{{ __('site.neden_urban_kabin') }}</h3>
                         <div class="row mt-4">
                             <div class="col-lg-6 col-12 mb-2">
-                                <h6>Kalite ve Dayanıklılık</h6>
-                                <p>Yüksek kaliteli malzemeler kullanarak uzun ömürlü ve dayanıklı kabinler üretiriz.</p>
+                                <h6>{{ __('site.neden_1_title') }}</h6>
+                                <p>{{ __('site.neden_1_text') }}</p>
                             </div>
                             <div class="col-lg-6 mb-2">
-                                <h6>Müşteri Odaklı Yaklaşım</h6>
-                                <p>Her projede, müşteri ihtiyaçlarına özel çözümler sunarak memnuniyeti en üst seviyeye çıkarırız.</p>
+                                <h6>{{ __('site.neden_2_title') }}</h6>
+                                <p>{{ __('site.neden_2_text') }}</p>
                             </div>
                             <div class="col-lg-6 mb-2">
-                                <h6>Zamanında Teslimat</h6>
-                                <p>Proje süreçlerini dikkatlice takip ederek zamanında teslimatı garantileriz.</p>
+                                <h6>{{ __('site.neden_3_title') }}</h6>
+                                <p>{{ __('site.neden_3_text') }}</p>
                             </div>
                             <div class="col-lg-6 mb-2">
-                                <h6>Çevre Dostu Üretim</h6>
-                                <p>Sürdürülebilir çözümlerle, doğaya dost malzemeler kullanarak çevreye duyarlı üretim yaparız.</p>
+                                <h6>{{ __('site.neden_4_title') }}</h6>
+                                <p>{{ __('site.neden_4_text') }}</p>
                             </div>
                             <div class="col-lg-6 mb-2">
-                                <h6>Gelişmiş Güvenlik Özellikleri</h6>
-                                <p>Kabinlerimizi, hırsızlık, vandalizm ve diğer dış tehditlere karşı güvenli hale getiririz.</p>
+                                <h6>{{ __('site.neden_5_title') }}</h6>
+                                <p>{{ __('site.neden_5_text') }}</p>
                             </div>
                             <div class="col-lg-6 mb-2">
-                                <h6>Fonksiyonel ve Estetik Tasarımlar</h6>
-                                <p>Şehir yaşamına uyum sağlayacak şık ve işlevsel kabin tasarımları sunarız.</p>
+                                <h6>{{ __('site.neden_5_title') }}</h6>
+                                <p>{{ __('site.neden_5_text') }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="btn_group" data-aos="fade-down" data-aos-duration="1000">
-                        <a href="{{ route('corporatedetail','hakkimizda') }}" class="btn gray">Devamını Oku </a>  
+                        <a href="{{ route('corporatedetail','hakkimizda') }}" class="btn gray">{{__('site.devaminioku')}}</a>  
                     </div>
                 </div>
                                     
@@ -162,7 +162,7 @@
                             <img src="/urbanicon.png" alt="{{ config('settings.siteTitle')}}" class="light" style="width: 50px;">
                         </div>
                         <div class="funfact_content">
-                            <p>YAPILAN İŞLER</p>
+                            <p>{{ __('site.yapilan_isler') }}</p>
                             <div class="d-flex align-items-center"><h2 class="fun-number">300</h2><span>+</span></div>                                
                         </div>
                     </div>                            
@@ -171,7 +171,7 @@
                             <img src="/urbanicon.png" alt="{{ config('settings.siteTitle')}}" class="light" style="width: 50px;">
                         </div>
                         <div class="funfact_content">
-                            <p>MÜŞTERİ MEMNUNİYETİ</p>
+                            <p>{{ __('site.musteri_memnuniyeti') }}</p>
                             <div class="d-flex align-items-center"><h2 class="fun-number">100%</h2></div>
                         </div>
                     </div>                            
@@ -180,7 +180,7 @@
                             <img src="/urbanicon.png" alt="{{ config('settings.siteTitle')}}" class="light" style="width: 50px;">
                         </div>
                         <div class="funfact_content">
-                            <p>YENİ ÜRÜNLER</p>
+                            <p>{{ __('site.yeni_urunler') }}</p>
                             <div class="d-flex align-items-center"><h2 class="fun-number">15</h2><span>+</span></div>
                         </div>
                     </div>                            
@@ -189,7 +189,7 @@
                             <img src="/urbanicon.png" alt="{{ config('settings.siteTitle')}}" class="light" style="width: 50px;">
                         </div>
                         <div class="funfact_content">
-                            <p>DEVAM EDEN İŞLER</p>
+                            <p>{{ __('site.devam_eden_isler') }}</p>
                             <div class="d-flex align-items-center"><h2 class="fun-number">2</h2><span>+</span></div>
                         </div>
                     </div>
@@ -275,21 +275,17 @@
     </div>
     <div class="container">
         <div class="section-header text-center has_line">
-            <h2 class="text-white">YAPILAN İŞLER</h2>
+            <h2 class="text-white">{{ __('site.yapilan_isler') }}</h2>
             <div class="section-desc row align-items-center justify-content-center">
                 <div class="col-lg-12">
-                    <p>Gerçekleştirdiğimiz referans projelerimiz, kalite ve güvenliği ön planda tutarak 
-                        her müşterimizin ihtiyaçlarına özel çözümler sunduğumuzu göstermektedir.
-                        Her projede zamanında ve mükemmeliyetçi bir yaklaşım sergileyerek, sektördeki 
-                        güvenilirliğimizi pekiştirmeye devam ediyoruz.
-                    </p>
+                    <p>{{ __('site.yapilan_isler_alt_text') }}</p>
                 </div>
             </div>
         </div>
 
         <div class="portfolio-filters-content">
             <div class="filters-button-group">
-                <button class="button" data-slug="">Hepsi</button>
+                <button class="button" data-slug="">{{ __('site.hepsi') }}</button>
                 @foreach($Services as $item)
                     @php $title = explode(" ", $item->title) @endphp
                     <button class="button {{ $item->id == 1 ? 'is-checked' : '' }}" data-slug="{{ $item->translate('tr')->slug }}">
@@ -307,7 +303,7 @@
             </div>
         </div>
         <div class="btn_group mt-4 w-100 text-center">
-            <a href="{{ route('project') }}" class="btn olive w-100">Bütün Projeleri Gör</a>
+            <a href="{{ route('project') }}" class="btn olive w-100">{{ __('site.tum_projeleri_gor') }}</a>
         </div>
     </div>
 </section>

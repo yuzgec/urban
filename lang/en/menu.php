@@ -2,12 +2,8 @@
 
 return [
     'iletisim' => 'contactus',
-    'referans' => 'reference',
-    'galeri' => 'gallery',
-    'blog' => 'blogs',
+    'blog' => 'blog-detail',
     'kurumsal' => 'corporate',
-    'hizmetlerimiz' => 'services',
     'hizmet' => 'service',
     'proje' => 'project',
-    'projeler' => 'projects',
 ];

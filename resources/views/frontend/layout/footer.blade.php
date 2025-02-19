@@ -5,28 +5,28 @@
             <div class="row align-items-end">
                 <div class="col-lg-4 col-md-2 col-sm-2">
                     <div class="section-header">
-                        <h2>İLETİŞİM</h2>
+                        <h2>{{ __('site.iletisim') }}</h2>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-5 col-sm-5">
                     <div class="communication">
                         <div class="info_body">
-                            <h6>Email</h6>
+                            <h6>{{ __('site.email') }}</h6>
                             <h5><a href="mailto:{{ config('settings.email1')}}" class="text-white">{{ config('settings.email1')}}</a> </h5>
                         </div>
                         <div class="info_body">
-                            <h6>Telefon</h6>
+                            <h6>{{ __('site.telefon') }}</h6>
                             <h5><a href="tel:{{ config('settings.telefon1')}}" class="text-white">{{ config('settings.telefon1')}}</a> </h5>
                             <h5><a href="tel:{{ config('settings.telefon2')}}" class="text-white">{{ config('settings.telefon2')}}</a> </h5>
 
                         </div>
                         <div class="info_body">
-                            <h6>Depo / İmalat</h6>
+                            <h6>{{ __('site.depo_imalat') }}</h6>
                             <h5 class="text-white">{{ config('settings.adres1')}}</h5>
 
                         </div>
                         <div class="info_body">
-                            <h6>İmalat / Ofis</h6>
+                            <h6>{{ __('site.imalat_ofis') }}</h6>
                             <h5 class="text-white">{{ config('settings.adres2')}}</h5>
                         </div>
                     </div>
@@ -48,13 +48,13 @@
                             </div>
                             <div class="terms_condition">
                                 <ul>
-                                    <li><a href="{{ route('contactus')}}">İletişim</a></li>
-                                    <li><a href="{{route('home')}}/sitemap/{{config('app.locale')}}/sitemap.xml">Sitemap</a></li>
-                                    <li><a href="https://www.godijital.net" target="_blank">Web Tasarım</a></li>
+                                    <li><a href="{{ route('contactus')}}">{{ __('site.iletisim') }}</a></li>
+                                    <li><a href="{{route('home')}}/sitemap/{{config('app.locale')}}/sitemap.xml">{{ __('site.sitemap') }}</a></li>
+                                    <li><a href="https://www.godijital.net" target="_blank">{{ __('site.web_tasarim') }}</a></li>
                                 </ul>
                             </div>
                             <div class="copyright">
-                                <p class="text-white">{{ config('settings.siteTitle')}} {{date('Y')}}. Tüm Hakları Saklıdır</p>
+                                <p class="text-white">{{ __('site.firma')}} {{date('Y')}}. {{ __('site.tüm_hakları_saklıdır') }}</p>
                             </div>
                         </div>
                     </div>
