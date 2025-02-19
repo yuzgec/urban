@@ -56,28 +56,11 @@ class PageCategoryController extends Controller
         return view('backend.pagecategory.edit', compact('Edit', 'Kategori'));
     }
 
-    public function update(PageCategoryRequest $request, $id)
+    public function update(Request $request, PageCategory $update)
     {
+        tap($update)->update($request->except('_token', 'image'));
 
-        $Update = PageCategory::findOrFail($id);
-
-        $Update->title = $request->title;
-        $Update->short = $request->short;
-        $Update->desc = $request->desc;
-
-        $Update->seo1 = $request->seo1;
-        $Update->seo2 = $request->seo2;
-        $Update->seo3 = $request->seo3;
-
-        $Update->parent_id  = $request->parent_id;
-
-        $Update->save();
-
-        if ($request->hasFile('image')) {
-            $Update->media()->delete();
-            $Update->addMedia($request->image)->toMediaCollection();
-        }
-
+ 
         if ($request->parent){
             $node = PageCategory::find($request);
             $node->appendNode($Update);
