@@ -11,7 +11,7 @@
                     </h4>
                 </div>
                 <div>
-                    <a class="btn btn-primary btn-sm" href="{{ route('admin.language-lines.create') }}">Yeni Ekle</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('language-lines.create') }}">Yeni Ekle</a>
                 </div>
             </div>
 
@@ -35,10 +35,10 @@
                             <td>{{ $line->text['en'] }}</td>
                             <td>
                                 <div class="btn-list flex-nowrap">
-                                    <a class="btn btn-primary btn-sm" href="{{ route('admin.language-lines.edit', $line) }}">
+                                    <a class="btn btn-primary btn-sm" href="{{ route('language-lines.edit', $line) }}">
                                         Düzenle
                                     </a>
-                                    <form action="{{ route('admin.language-lines.destroy', $line) }}" method="POST">
+                                    <form action="{{ route('language-lines.destroy', $line) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Emin misiniz?')">

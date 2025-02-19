@@ -11,12 +11,12 @@
                     </h4>
                 </div>
                 <div>
-                    <a class="btn btn-primary btn-sm" href="{{ route('admin.language-lines.index') }}">Çeviriler</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('language-lines.index') }}">Çeviriler</a>
                 </div>
             </div>
 
             <div class="card-body">
-                <form action="{{ route('admin.language-lines.update', $languageLine) }}" method="POST">
+                <form action="{{ route('language-lines.update', $languageLine) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group mb-3">
@@ -41,6 +41,12 @@
                         <label class="form-label">İngilizce</label>
                         <input type="text" class="form-control @error('text.en') is-invalid @enderror" name="text[en]" value="{{ old('text.en', $languageLine->text['en']) }}" required>
                         @error('text.en')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label">Arapça</label>
+                        <input type="text" class="form-control @error('text.sa') is-invalid @enderror" name="text[sa]" value="{{ old('text.sa', $languageLine->text['sa']) }}" required>
+                        @error('text.sa')<div class="invalid-feedback">{{ $message }}</div>@enderror
                     </div>
 
                     <button type="submit" class="btn btn-primary">Güncelle</button>

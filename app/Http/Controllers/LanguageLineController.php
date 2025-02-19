@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\LanguageLine;
@@ -25,7 +25,8 @@ class LanguageLineController extends Controller
             'group' => 'required',
             'key' => 'required',
             'text.tr' => 'required',
-            'text.en' => 'required'
+            'text.en' => 'required',
+            'text.sa' => 'required'
         ]);
 
         LanguageLine::create([
@@ -33,7 +34,8 @@ class LanguageLineController extends Controller
             'key' => $request->key,
             'text' => [
                 'tr' => $request->text['tr'],
-                'en' => $request->text['en']
+                'en' => $request->text['en'],
+                'sa' => $request->text['sa']
             ]
         ]);
 
@@ -51,7 +53,8 @@ class LanguageLineController extends Controller
             'group' => 'required',
             'key' => 'required',
             'text.tr' => 'required',
-            'text.en' => 'required'
+            'text.en' => 'required',
+            'text.sa' => 'required'
         ]);
 
         $languageLine->update([
@@ -59,7 +62,8 @@ class LanguageLineController extends Controller
             'key' => $request->key,
             'text' => [
                 'tr' => $request->text['tr'],
-                'en' => $request->text['en']
+                'en' => $request->text['en'],
+                'sa' => $request->text['sa']
             ]
         ]);
 
