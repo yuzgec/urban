@@ -63,7 +63,7 @@ class PageCategoryController extends Controller
  
         if ($request->parent){
             $node = PageCategory::find($request);
-            $node->appendNode($Update);
+            $node->appendNode($update);
         }
 
         toast(SWEETALERT_MESSAGE_UPDATE,'success');
