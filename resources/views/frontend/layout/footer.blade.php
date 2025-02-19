@@ -17,14 +17,17 @@
                         <div class="info_body">
                             <h6>Telefon</h6>
                             <h5><a href="tel:{{ config('settings.telefon1')}}" class="text-white">{{ config('settings.telefon1')}}</a> </h5>
-                        </div>
-                        <div class="info_body">
-                            <h6>Telefon</h6>
                             <h5><a href="tel:{{ config('settings.telefon2')}}" class="text-white">{{ config('settings.telefon2')}}</a> </h5>
+
                         </div>
                         <div class="info_body">
-                            <h6>Adres</h6>
-                            <h5  class="text-white">{{ config('settings.adres1')}}</h5>
+                            <h6>Depo / İmalat</h6>
+                            <h5 class="text-white">{{ config('settings.adres1')}}</h5>
+
+                        </div>
+                        <div class="info_body">
+                            <h6>İmalat / Ofis</h6>
+                            <h5 class="text-white">{{ config('settings.adres2')}}</h5>
                         </div>
                     </div>
                 </div>

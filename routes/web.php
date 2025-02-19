@@ -8,6 +8,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
+    dd(__('menu.iletisim'));
+
     Route::get(__('menu.iletisim'), [HomeController::class, 'contactus'])->name('contactus');
     Route::get(__('menu.referans'), [HomeController::class, 'reference'])->name('reference');
     Route::get(__('menu.galeri'), [HomeController::class, 'gallery'])->name('gallery');
