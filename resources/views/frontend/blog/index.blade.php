@@ -4,10 +4,10 @@
     <div class="page_header_inner">
         <div class="container">
             <div class="page_header_content d-flex align-items-center justify-content-between">
-                <h2 class="heading">Blog</h2>
+                <h2 class="heading">{{ __('site.blog')}}</h2>
                 <ul class="breadcrumb d-flex align-items-center">
-                    <li><a href="{{ route('home')}}">Anasayfa</a></li>
-                    <li class="active">Blog</li>
+                    <li><a href="{{ route('home')}}">{{ __('site.anasayfa')}}</a></li>
+                    <li class="active">{{ __('site.blog')}}</li>
                 </ul>
             </div>
         </div>
@@ -32,7 +32,8 @@
                                 <div class="details_link">
                                     <a href="{{route('blogdetail', $item->slug)}}" title="{{ $item->title }}">
                                         <span class="link_text">
-                                            Devamını Oku</span>
+                                            {{ __('site.devaminioku')}}
+                                        </span>
                                         <span class="link_icon">
                                             <span class="line"></span>
                                             <span class="circle"></span>
