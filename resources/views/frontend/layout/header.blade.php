@@ -9,7 +9,7 @@
             </div>
             <div class="mainnav d-none d-lg-block">
                 <ul class="main_menu">
-                    <li class="menu-item  active"><a href="{{ route('home') }}">Anasayfa</a></li>
+                    <li class="menu-item  active"><a href="{{ route('home') }}">{{ __('site.anasayfa') }}</a></li>
                     <li class="menu-item menu-item-has-children"><a href="#">Kurumsal</a>
                         <ul class="sub-menu">
                             @foreach ($Pages as $item)

@@ -159,7 +159,7 @@
                 <div class="funfacts_inner">
                     <div class="funfact2 d-flex align-items-center">
                         <div class="fun_img">
-                            <img src="/urbanicon.png" alt="{{ $item->title }}" class="light" style="width: 50px;">
+                            <img src="/urbanicon.png" alt="{{ config('settings.siteTitle')}}" class="light" style="width: 50px;">
                         </div>
                         <div class="funfact_content">
                             <p>YAPILAN İŞLER</p>
@@ -168,7 +168,7 @@
                     </div>                            
                     <div class="funfact2 d-flex align-items-center">
                         <div class="fun_img">
-                            <img src="/urbanicon.png" alt="{{ $item->title }}" class="light" style="width: 50px;">
+                            <img src="/urbanicon.png" alt="{{ config('settings.siteTitle')}}" class="light" style="width: 50px;">
                         </div>
                         <div class="funfact_content">
                             <p>MÜŞTERİ MEMNUNİYETİ</p>
@@ -177,7 +177,7 @@
                     </div>                            
                     <div class="funfact2 d-flex align-items-center">
                         <div class="fun_img">
-                            <img src="/urbanicon.png" alt="{{ $item->title }}" class="light" style="width: 50px;">
+                            <img src="/urbanicon.png" alt="{{ config('settings.siteTitle')}}" class="light" style="width: 50px;">
                         </div>
                         <div class="funfact_content">
                             <p>YENİ ÜRÜNLER</p>
@@ -186,7 +186,7 @@
                     </div>                            
                     <div class="funfact2 d-flex align-items-center">
                         <div class="fun_img">
-                            <img src="/urbanicon.png" alt="{{ $item->title }}" class="light" style="width: 50px;">
+                            <img src="/urbanicon.png" alt="{{ config('settings.siteTitle')}}" class="light" style="width: 50px;">
                         </div>
                         <div class="funfact_content">
                             <p>DEVAM EDEN İŞLER</p>

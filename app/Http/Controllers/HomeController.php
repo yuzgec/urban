@@ -8,6 +8,7 @@ use App\Models\Page;
 use App\Models\Pivot;
 use App\Models\Product;
 use App\Models\Service;
+use App\Models\LanguageLine;
 use Illuminate\Http\Request;
 use App\Services\MediaService;
 use App\Models\ProductCategory;
@@ -18,6 +19,14 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 class HomeController extends Controller
 {
     public function index(){
+
+
+   
+
+
+
+
+
         SEOMeta::setTitle('WC Kabin - Otomat İmalatı');
         SEOMeta::setDescription('Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatlarını yapmaktadır. Lütfen iletişime geçiniz.');
         SEOMeta::setCanonical(url()->full());
