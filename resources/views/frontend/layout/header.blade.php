@@ -36,8 +36,8 @@
                     <li class="menu-item"><a href="{{ route('project')}}">{{ __('site.projeler') }}</a></li>
                     <li class="menu-item"><a href="{{ route('reference')}}">{{ __('site.referanslar') }}</a></li>
                     {{-- <li class="menu-item"><a href="{{ route('blog')}}">S.S.S.</a></li> --}}
-                    <li class="menu-item"><a href="{{ route('blog')}}">{{ __('menu.blog') }}</a></li>
-                    <li class="menu-item"><a href="{{ route('contactus')}}">{{ __('menu.iletisim') }}</a></li>
+                    <li class="menu-item"><a href="{{ route('blog')}}">{{ __('site.blog') }}</a></li>
+                    <li class="menu-item"><a href="{{ route('contactus')}}">{{ __('site.iletisim') }}</a></li>
                 </ul>
             </div>
             <div class="header_right_part d-flex align-items-center">
