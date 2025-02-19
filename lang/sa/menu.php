@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'iletisim' => 'الاتصال',
-    'referans' => 'مراجع',
-    'galeri' => 'معرض',
-    'blog' => 'مدونات',
-    'kurumsal' => 'الشركة',
-    'hizmetlerimiz' => 'خدماتنا',
-    'hizmet' => 'خدمة',
-    'proje' => 'مشروع',
-    'projeler' => 'مشاريع',
+    'iletisim' => 'al-ittisal',
+    'referans' => 'maraji',
+    'galeri' => 'maard',
+    'blog' => 'mudawinat',
+    'kurumsal' => 'al-sharika',
+    'hizmetlerimiz' => 'khadamatuna',
+    'hizmet' => 'khidma',
+    'proje' => 'mashru',
+    'projeler' => 'mashari',
 ];
