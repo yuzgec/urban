@@ -31,9 +31,11 @@
             @foreach ($Service as $item)
             <div class="col-lg-4 mb-3 content" data-aos="fade-up" data-aos-duration="1000">
                 <div class="card card-hover">
+
                     <div class="card-body">
+                        <img class="card-img-top" src="https://picsum.photos/200/100" alt="{{ $item->title }}">
                         <div class="icon_box mb-4 mt-3">
-                            <img src="/urbanicon.png" alt="{{ $item->title }}" class="light" style="width: 50px;">
+                            <img src="/urbanicon.png" alt="{{ $item->title }}" class="light" style="position: absolute;top: 25px;right: 25px;width: 50px;">
                         </div>
                         <h4 class="card-title"><a href="{{ route('servicedetail', $item->slug) }}" title="{{ $item->title }}">{{ $item->title }}</a></h4>
                         <p class="card-text">

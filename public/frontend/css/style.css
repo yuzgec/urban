@@ -11562,6 +11562,7 @@ label {
 
 .details_link a .link_text {
   margin-right: 1.875rem;
+  margin-left: 0.5rem;
 }
 
 .details_link a .link_icon {
@@ -15491,6 +15492,7 @@ body.left_menu .mr_menu {
   width: 3.125rem;
   height: 3.125rem;
   border-width: 0.125rem;
+
 }
 
 .service-information ul {

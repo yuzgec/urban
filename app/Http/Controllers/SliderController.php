@@ -21,18 +21,13 @@ class SliderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'tr.title' => 'required',
-            'en.title' => 'required',
+            'title:tr' => 'required',
         ]);
 
         $New = Slider::create($request->all());
 
         if($request->hasFile('image')){
-            $New->addMedia($request->image)->toMediaCollection('web');
-        }
-
-        if($request->hasFile('imagemobil')){
-            $New->addMedia($request->imagemobil)->toMediaCollection('mobil');
+            $New->addMedia($request->image)->toMediaCollection('page');
         }
 
         toast(SWEETALERT_MESSAGE_CREATE,'success');
@@ -48,8 +43,7 @@ class SliderController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'tr.title' => 'required',
-            'en.title' => 'required',
+            'title:tr' => 'required',
         ]);
 
         $Update = Slider::find($id);

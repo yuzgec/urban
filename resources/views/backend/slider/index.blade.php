@@ -36,10 +36,12 @@
                         @foreach($All as $item)
                             <tr id="slider_{{ $item->id }}">
                                 <td>
-                                    <img src="{{ $item->getFirstMediaUrl('web') }}" class="avatar me-2"/>
+                                    <img src="{{ $item->getFirstMediaUrl('page', 'thumb') }}" class="avatar me-2"/>
                                 </td>
                                 <td>
-                                    {{ $item->title }}
+                                    <a href="{{ route('slider.edit', $item->id) }}">
+                                        {{ $item->title }}
+                                    </a>
                                 </td>
                                 <td>
                                     <label class="form-check form-check-single form-switch">

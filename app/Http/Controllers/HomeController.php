@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\Page;
 use App\Models\Pivot;
 use App\Models\Product;
+use App\Models\Slider;
 use App\Models\Service;
 use App\Models\LanguageLine;
 use Illuminate\Http\Request;
@@ -21,11 +22,7 @@ class HomeController extends Controller
     public function index(){
 
 
-   
-
-
-
-
+        $Slider = Slider::orderBy('rank')->get();
 
         SEOMeta::setTitle('WC Kabin - Otomat İmalatı');
         SEOMeta::setDescription('Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatlarını yapmaktadır. Lütfen iletişime geçiniz.');
@@ -72,7 +69,7 @@ class HomeController extends Controller
                 return $media->getCustomProperty('orientation') === 'horizontal' ? 1 : 0;
             });
 
-        return view('frontend.index', compact('Hakkimizda', 'galleryImages', 'Services', 'imageCounts', 'defaultService'));
+        return view('frontend.index', compact('Hakkimizda', 'galleryImages', 'Services', 'imageCounts', 'defaultService', 'Slider'));
     }
 
     public function categorydetail($url)

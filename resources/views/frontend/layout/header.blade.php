@@ -3,8 +3,9 @@
         <div class="pt-3 d-flex align-items-center justify-content-between">
             <div class="logo">
                 <a href="{{ route('home') }}" title="{{ config('settings.siteTitle')}}">
-                    <img src="/{{ config('settings.siteFooterLogo')}}" alt="{{ config('settings.siteTitle')}}" class="logo-light">
                     <img src="/{{ config('settings.siteLogo')}}" alt="{{ config('settings.siteTitle')}}" class="logo-dark">
+                    <img src="/{{ config('settings.siteFooterLogo')}}" alt="{{ config('settings.siteTitle')}}" class="logo-light">
+
                 </a>
             </div>
             <div class="mainnav d-none d-lg-block">
@@ -64,13 +65,11 @@
     </div>
 </header>
 
-<div class="mr_menu">
+<div class="mr_menu" dir="ltr">
     <div class="mr_menu_overlay"></div>
     <button type="button" class="mr_menu_close"><i class="bi bi-x-lg"></i></button>
     <div class="logo">
-        <a href="{{ route('home') }}">
-            <img src="/{{ config('settings.siteFooterLogo')}}" alt="{{ config('settings.siteTitle')}}" style="width: 200px;">
-        </a>
+      
     </div>
     <div class="mr_navmenu"></div>
 
@@ -101,9 +100,9 @@
     </footer>
 </div>
 
-<div class="aside_info_wrapper">
+<div class="aside_info_wrapper" >
     <button class="aside_close"><i class="bi bi-x-lg"></i></button>
-    <div class="aside_logo">
+    <div class="aside_logo" >
         <img src="/urban-kabin-logo.png" alt="{{ config('settings.siteTitle')}}" style="width: 200px;">
 
     </div>
