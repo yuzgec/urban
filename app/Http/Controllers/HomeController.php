@@ -23,6 +23,7 @@ class HomeController extends Controller
 
 
         $Slider = Slider::orderBy('rank')->get();
+        $Index = Page::where('id', 10)->first();
 
         SEOMeta::setTitle('WC Kabin - Otomat İmalatı');
         SEOMeta::setDescription('Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatlarını yapmaktadır. Lütfen iletişime geçiniz.');
@@ -69,7 +70,7 @@ class HomeController extends Controller
                 return $media->getCustomProperty('orientation') === 'horizontal' ? 1 : 0;
             });
 
-        return view('frontend.index', compact('Hakkimizda', 'galleryImages', 'Services', 'imageCounts', 'defaultService', 'Slider'));
+        return view('frontend.index', compact('Hakkimizda', 'galleryImages', 'Services', 'imageCounts', 'defaultService', 'Slider', 'Index'));
     }
 
     public function categorydetail($url)
