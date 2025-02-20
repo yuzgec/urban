@@ -2,7 +2,7 @@
 
 return [
     'iletisim' => 'contactus',
-    'blog' => 'blog-detail',
+    'blog' => 'blog',
     'kurumsal' => 'corporate',
     'hizmet' => 'service',
     'proje' => 'project',
