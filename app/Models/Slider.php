@@ -20,8 +20,7 @@ class Slider extends Model implements HasMedia,TranslatableContract
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('web');
-        $this->addMediaCollection('mobil');
+        $this->addMediaCollection('page');
     }
 
     public function registerMediaConversions(Media $media = null): void
@@ -30,23 +29,17 @@ class Slider extends Model implements HasMedia,TranslatableContract
             return;
         }
 
-        $this->addMediaConversion('web_img')
+        $this->addMediaConversion('page_img')
             ->width(1250)
             ->nonOptimized()
             ->keepOriginalImageFormat()
-            ->performOnCollections('web');
+            ->performOnCollections('page');
 
         $this->addMediaConversion('thumb')
             ->width(250)
             ->nonOptimized()
             ->keepOriginalImageFormat()
-            ->performOnCollections('web','mobile');
-            
-        $this->addMediaConversion('mobile_img')
-            ->width(600)
-            ->nonOptimized()
-            ->keepOriginalImageFormat()
-            ->performOnCollections('mobile');
+            ->performOnCollections('page','mobile');
                  
     }
 

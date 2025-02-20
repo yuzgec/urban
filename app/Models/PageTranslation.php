@@ -30,7 +30,8 @@ class PageTranslation extends Model implements Viewable
     {
         return SlugOptions::create()
             ->generateSlugsFrom('title')
-            ->saveSlugsTo('slug');
-    }
+            ->saveSlugsTo('slug')
+            ->doNotTransliterate();
+        }
 
 }
