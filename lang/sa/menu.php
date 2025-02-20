@@ -1,10 +1,11 @@
 <?php
 
 return [
-    'iletisim' => 'الاتصال',
-    'blog' => 'تفاصيل-المدونة',
-    'kurumsal' => 'الشركة',
-    'hizmet' => 'خدمة',
-    'proje' => 'مشروع',
-    'referanslar' => 'المراجعات',
+    'iletisim' => 'al-ittisal',
+    'blog' => 'tafasil-al-mudawana',
+    'kurumsal' => 'al-sharika',
+    'hizmet' => 'khidma',
+    'proje' => 'mashru',
+    'referanslar' => 'al-murajaeat',
+    'projeler' => 'al-mashari',
 ];

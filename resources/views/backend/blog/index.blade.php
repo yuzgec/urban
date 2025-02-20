@@ -38,7 +38,7 @@
                     @foreach($All as $item)
                     <tr id="page_{{$item->id}}">
                         <td>
-                            <span class="avatar me-2" style="background-image: url({{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page')}})"></span>
+                            <span class="avatar me-2" style="background-image: url({{ $item->getFirstMediaUrl('page', 'thumb')}})"></span>
                         </td>
                         <td>
                             <div class="font-weight-medium">
