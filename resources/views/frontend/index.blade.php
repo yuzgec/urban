@@ -33,7 +33,7 @@
                 <div class="card card-hover">
 
                     <div class="card-body">
-                        <img class="card-img-top" src="https://picsum.photos/200/100" alt="{{ $item->title }}">
+                        <img class="card-img-top" src="{{ $item->getFirstMediaUrl('page', 'thumb') }}" alt="{{ $item->title }}">
                         <div class="icon_box mb-4 mt-3">
                             <img src="/urbanicon.png" alt="{{ $item->title }}" class="light" style="position: absolute;top: 25px;right: 25px;width: 50px;">
                         </div>
