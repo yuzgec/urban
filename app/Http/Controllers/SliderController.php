@@ -26,7 +26,7 @@ class SliderController extends Controller
             'title:tr' => 'required',
         ]);
 
-        $New = Slider::create($request->all());
+        $New = Slider::create($request->except('image'));
 
         if($request->hasFile('image')){
             $New->addMedia($request->image)->toMediaCollection('page');
@@ -49,7 +49,7 @@ class SliderController extends Controller
         ]);
 
         $Update = Slider::find($id);
-        $Update->update($request->all());
+        $Update->update($request->except('image'));
 
         if($request->removeImage == "1"){
             $Update->clearMediaCollection('web');
