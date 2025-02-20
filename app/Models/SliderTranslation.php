@@ -10,7 +10,7 @@ class SliderTranslation extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['title', 'link', 'link_text', 'text1', 'text2', 'text3'];
+    protected $guarded = [];
 
     protected $translationForeignKey = 'slider_id';
 }

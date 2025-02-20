@@ -16,7 +16,7 @@ class Slider extends Model implements HasMedia,TranslatableContract
 
     public $translatedAttributes = ['title','link', 'link_text','text1','text2','text3'];
 
-    protected $fillable = ['status', 'rank'];
+    protected $guarded = [];
 
     public function registerMediaCollections(): void
     {
