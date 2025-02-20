@@ -28,8 +28,7 @@ class PageCategoryTranslation extends Model
     public function getSlugOptions() : SlugOptions
     {
         return SlugOptions::create()
-        ->generateSlugsFrom('title')
-        ->saveSlugsTo('slug')
-        ->doNotTransliterate();
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
     }
 }

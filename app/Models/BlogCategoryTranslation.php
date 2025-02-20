@@ -28,7 +28,6 @@ class BlogCategoryTranslation extends Model
     {
         return SlugOptions::create()
             ->generateSlugsFrom('title')
-            ->saveSlugsTo('slug')
-            ->doNotTransliterate();
+            ->saveSlugsTo('slug');
     }
 }

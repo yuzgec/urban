@@ -29,8 +29,6 @@ class ServiceCategoryTranslation extends Model
     {
         return SlugOptions::create()
             ->generateSlugsFrom('title')
-            ->saveSlugsTo('slug')
-            ->doNotTransliterate(); // Latin alfabesine çevirmeden olduğu gibi bırak
-
+            ->saveSlugsTo('slug');
     }
 }
