@@ -42,12 +42,12 @@ class HomeController extends Controller
                     [Service::class],
                     function ($query) use ($service) {
                         $query->whereHas('translations', function($q) use ($service) {
-                            $q->where('slug', $service->translate('tr')->slug);
+                            $q->where('slug', $service->slug);
                         });
                     }
                 )->count();
             
-            $imageCounts[$service->translate('tr')->slug] = $count;
+            $imageCounts[$service->slug] = $count;
         }
 
         $mediaService = new MediaService();

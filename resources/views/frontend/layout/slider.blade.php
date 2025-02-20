@@ -5,7 +5,7 @@
             <div class="swiper-wrapper">
                 @foreach($Slider as $item)
                 <div class="swiper-slide">
-                    <div class="slider" style="background-image: url({{ $item->getFirstMediaUrl('page', 'thumb') }})">
+                    <div class="slider" style="background-image: url({{ $item->getFirstMediaUrl('page', 'page_img') }})">
                         <div class="slide_content">
                             <div class="slide_content_wrapper mb-0 h-auto bg-dark-100">
                                 <div class="slide_content_inner">
