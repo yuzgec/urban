@@ -25,8 +25,7 @@ class HomeController extends Controller
         $Slider = Slider::orderBy('rank')->get();
         $Index = Page::where('id', 10)->first();
 
-        SEOMeta::setTitle('WC Kabin - Otomat İmalatı');
-        SEOMeta::setDescription('Urban Kabin ATM kabini, WC Kabin, Otomatik kabin ve diğer kabin imalatlarını yapmaktadır. Lütfen iletişime geçiniz.');
+        SEOMeta::setDescription('Urban Reklam, tabela sektöründe en yeni teknolojileri ve yaratıcı tasarımları kullanarak, işletmenizin en iyi şekilde görünmesini sağlıyoruz.');
         SEOMeta::setCanonical(url()->full());
         
         $Hakkimizda = Page::where('id', '=',1)->first();
