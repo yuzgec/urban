@@ -245,7 +245,7 @@
     .logo {
         position: relative;
         display: inline-block;
-        width: 150px; /* Logo genişliğine göre ayarlayın */
+        width: 200px; /* Logo genişliğine göre ayarlayın */
     }
 </style>
 </head>

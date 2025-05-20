@@ -25,7 +25,6 @@ class HomeController extends Controller
         $Slider = Slider::orderBy('rank')->get();
         $Index = Page::where('id', 10)->first();
 
-        SEOMeta::setDescription('Urban Reklam, tabela sektöründe en yeni teknolojileri ve yaratıcı tasarımları kullanarak, işletmenizin en iyi şekilde görünmesini sağlıyoruz.');
         SEOMeta::setCanonical(url()->full());
         
         $Hakkimizda = Page::where('id', '=',1)->first();

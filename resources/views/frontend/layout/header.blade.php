@@ -34,7 +34,6 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li class="menu-item"><a href="{{ route('project')}}">{{ __('site.projeler') }}</a></li>
                     <li class="menu-item"><a href="{{ route('reference')}}">{{ __('site.referanslar') }}</a></li>
                     {{-- <li class="menu-item"><a href="{{ route('blog')}}">S.S.S.</a></li> --}}
                     <li class="menu-item"><a href="{{ route('blog')}}">{{ __('site.blog') }}</a></li>
