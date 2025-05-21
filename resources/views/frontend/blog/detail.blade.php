@@ -14,7 +14,6 @@
                     </div>
                 </div>
            
-
                 <ul class="breadcrumb d-flex align-items-center">
                     <li><a href="{{ route('home')}}">{{ __('site.anasayfa')}}</a></li>
                     <li><a href="{{ route('blog')}}">{{ __('site.blog')}}</a></li>

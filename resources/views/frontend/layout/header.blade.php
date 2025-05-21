@@ -5,13 +5,12 @@
                 <a href="{{ route('home') }}" title="{{ config('settings.siteTitle')}}">
                     <img src="/{{ config('settings.siteLogo')}}" alt="{{ config('settings.siteTitle')}}" class="logo-dark">
                     <img src="/{{ config('settings.siteFooterLogo')}}" alt="{{ config('settings.siteTitle')}}" class="logo-light">
-
                 </a>
             </div>
             <div class="mainnav d-none d-lg-block">
                 <ul class="main_menu">
-                    <li class="menu-item  active"><a href="{{ route('home') }}">{{ __('site.anasayfa') }}</a></li>
-                    <li class="menu-item menu-item-has-children"><a href="#">{{ __('site.kurumsal') }}</a>
+                    <li class="menu-item  active"><a href="{{ route('home') }}" title="{{ __('site.anasayfa') }}">{{ __('site.anasayfa') }}</a></li>
+                    <li class="menu-item menu-item-has-children"><a href="#" title="{{ __('site.kurumsal') }}">{{ __('site.kurumsal') }}</a>
                         <ul class="sub-menu">
                             @foreach ($Pages as $item)
                                 <li class="menu-item">
@@ -23,7 +22,7 @@
                  
                         </ul>
                     </li>
-                    <li class="menu-item menu-item-has-children"><a href="#">{{ __('site.hizmetlerimiz') }}</a>
+                    <li class="menu-item menu-item-has-children"><a href="#" title="{{ __('site.hizmetlerimiz') }}">{{ __('site.hizmetlerimiz') }}</a>
                         <ul class="sub-menu">
                             @foreach ($Service as $item)
                                 <li class="menu-item">
@@ -49,7 +48,7 @@
                 <div class="header_search">			
                     
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <a class="" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, '/', [], true) }}">
+                        <a  hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, '/', [], true) }}">
                             <img src="/frontend/flag/{{ $localeCode }}.svg" alt="{{ $properties['native'] }}" style="width: 20px;">
                         </a>
                     @endforeach

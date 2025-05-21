@@ -13,7 +13,7 @@
         // Preloader
         setTimeout(function() {
             $('#preloader').addClass('hide');
-        }, 2000);
+        }, 1000);
 
         $( "#preloader" ).append('<div class="hide-loader">İptal</div>');
         $('.hide-loader').on("click", function(e){
